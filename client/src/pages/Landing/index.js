@@ -1,0 +1,36 @@
+import React from 'react';
+import { Link } from 'react-router';
+import './style.css';
+
+import Auth from '../../utils/auth';
+
+const Landing = () => {
+        return (
+            <div>
+                <div className="videoContainer">
+                    <div className="videoWrapper">
+                    <video autoplay muted loop id="Video">
+                    <source className="video" src="../public/assets/video/ship.mp4" type="video/mp4"></source>
+                    </video>
+                    </div>
+                </div>
+                <div className="content">
+                    <h1>D&D</h1>
+                    <h1 className="secondH1">Beyond</h1>
+                    {Auth.loggedIn() ? (
+                    <>
+                    <p>Welcome Back {Auth.getProfile().data.username}</p>
+                    <Link to="/home" className="button1">Continue Your Adventure</Link>
+                    </>
+                    ) : (
+                    <>
+                    <p>Your Journey Starts Now</p>
+                    <Link to="/login" className="button1">Log In</Link>
+                    <Link to="/signup" className="button2">Sign Up</Link>
+                    </>)}
+                </div>
+            </div>
+        );
+    };
+
+export default Landing;
