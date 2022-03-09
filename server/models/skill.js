@@ -11,4 +11,4 @@ const Skill = new Schema({
   url: { type: String, index: true },
 });
 
-module.exports = mongoose.model('Skill', Skill, 'skills');
+module.exports = Skill = mongoose.model('Skill', Skill, 'skills');

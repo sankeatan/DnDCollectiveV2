@@ -1,10 +1,14 @@
 const db = require('../config/connection');
-const { User, Thought } = require('../models');
+const { User, Thought, Skill } = require('../models');
 const userSeeds = require('./userSeeds.json');
 const thoughtSeeds = require('./thoughtSeeds.json');
 
+const skillSeeds = require('./5e-SRD-Skills.json');
+// const { Skill } = require('../models');
+
 db.once('open', async () => {
   try {
+    await Skill.deleteMany({});
     await Thought.deleteMany({});
     await User.deleteMany({});
 
