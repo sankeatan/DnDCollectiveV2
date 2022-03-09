@@ -1,0 +1,95 @@
+html{
+    height:100%;
+    background:rgba(red, green, blue, alpha)
+}
+
+body{
+    height: 100%;
+}
+
+.videoContainer{
+    height:auto;
+}
+
+.videoWrapper{
+    overflow:hidden;
+}
+
+.videoWrapper > video{
+    background-image: black;
+    margin-bottom: -6px;
+    width:100%;
+    height:939px;
+    object-fit: cover;
+}
+
+.videoWrapper:before {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: rgba(10, 10, 10, 0.514);
+}
+
+h1{
+    font-size: 5em;
+    font-weight: 780;
+    position:absolute;
+    top:40%;
+    left: 20%;
+    text-shadow: -1.5px 0 rgba(0, 0, 0, 0.692), 0 1.5px rgba(0, 0, 0, 0.692), 1.5px 0 rgba(0, 0, 0, 0.692), 0 -1.5px rgba(0, 0, 0, 0.692);
+}
+
+.secondH1{
+    font-size: 5em;
+    font-weight: 780;
+    position:absolute;
+    top:48%;
+    left: 17.5%;
+    text-shadow: -1.5px 0 rgba(0, 0, 0, 0.692), 0 1.5px rgba(0, 0, 0, 0.692), 1.5px 0 rgba(0, 0, 0, 0.692), 0 -1.5px rgba(0, 0, 0, 0.692);
+}
+
+p{
+    font-size: 2em;
+    position:absolute;
+    top:61%;
+    left: 15.8%;
+    text-shadow: -1.5px 0 rgba(0, 0, 0, 0.692), 0 1.5px rgba(0, 0, 0, 0.692), 1.5px 0 rgba(0, 0, 0, 0.692), 0 -1.5px rgba(0, 0, 0, 0.692);
+}
+
+.button1{
+    color: #111;
+    text-decoration: none;
+    position:absolute;
+    top:70%;
+    left: 15.8%;
+    background: #fff;
+    padding: 10px 40px;
+    font-size: 1.2em;
+    display: inline-block;
+    font-weight: 500;
+    margin-top: 10px;
+    margin-right: 10px;
+    letter-spacing: 2px;
+}
+
+.button2{
+    color: #111;
+    text-decoration: none;
+    position:absolute;
+    top:70%;
+    left: 25.8%;
+    background: #fff;
+    padding: 10px 40px;
+    font-size: 1.2em;
+    display: inline-block;
+    font-weight: 500;
+    margin-top: 10px;
+    margin-right: 10px;
+    letter-spacing: 2px;
+}
+
+.content{
+    font-family: "Poppins", sans-serif;
+    color:white;
+}
