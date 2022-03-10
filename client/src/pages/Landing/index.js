@@ -1,6 +1,7 @@
 import React from 'react';
-import { Link } from 'react-router-dom'
-import './style.css';
+import { Link } from 'react-router-dom';
+import '../Landing/style.css';
+import video from '../../assets/videos/ship.mp4'
 
 import Auth from '../../utils/auth';
 
@@ -9,8 +10,8 @@ const Landing = () => {
             <div>
                 <div className="videoContainer">
                     <div className="videoWrapper">
-                    <video autoplay muted loop id="Video">
-                    <source className="video" src="../public/assets/video/ship.mp4" type="video/mp4"></source>
+                    <video autoPlay muted loop controls id="Video">
+                    <source className="video" src={video} type="video/mp4"></source>
                     </video>
                     </div>
                 </div>

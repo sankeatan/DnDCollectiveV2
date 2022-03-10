@@ -9,6 +9,15 @@ const typeDefs = gql`
     thoughts: [Thought]!
   }
 
+  type AbilityScore {
+    _id: ID
+    desc: String
+    full_name: String
+    index: String
+    name: String
+    url: String
+  }
+
   type Thought {
     _id: ID
     thoughtText: String
