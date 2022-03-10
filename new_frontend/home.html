@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="home.css">
     <title>Character Builder</title>
@@ -12,14 +13,157 @@
 <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom home-header">
     <a class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
     <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
-    <span class="fs-4">D&D Beyond</span>
+    <span class="fs-4 title">D&D Beyond</span>
     </a>
 
     <ul class="nav nav-pills">
-    <li class="nav-item"><a href="#" class="nav-link active" aria-current="page">Home</a></li>
+    <li class="nav-item"><a href="#" class="nav-link" aria-current="page">Home</a></li>
     <li class="nav-item"><a href="#" class="nav-link">Features</a></li>
     <li class="nav-item"><a href="#" class="nav-link">Pricing</a></li>
-    <li class="nav-item"><a href="#" class="nav-link">FAQs</a></li>
-    <li class="nav-item"><a href="#" class="nav-link">About</a></li>
     </ul>
+
+    
 </header>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-light navbar-custom">
+    <div class="container-fluid">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav nav-items">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Features</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Pricing</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+</nav>
+
+<div class="videoContainer">
+    <div class="videoWrapper">
+        <video autoplay muted loop id="Video">
+            <source class="video" src="../client/src/assets/videos/ship.mp4" type="video/mp4">
+        </video>
+    </div>
+    <div class= "gradientDiv">
+        <div class="div1">
+            <div class="content1">
+                <h1 class="content1-title">Character Builder</h1>
+                <p class="content1-p">Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum, repudiandae reprehenderit provident magni labore perspiciatis voluptas tempore quia ullam magnam! Error harum qui quae culpa dolores deleniti earum, delectus aperiam. Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum, repudiandae reprehenderit provident magni labore perspiciatis voluptas tempore quia ullam magnam! Error harum qui quae culpa dolores deleniti earum, delectus aperiam. </p>
+                <h4 class="learn1">Learn More</h2>
+            </div>
+        </div>
+        <div class="div2">
+            <div class="content2">
+                <h1 class="content2-title">Community Builds</h1>
+                <p class="content2-p">Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum, repudiandae reprehenderit provident magni labore perspiciatis voluptas tempore quia ullam magnam! Error harum qui quae culpa dolores deleniti earum, delectus aperiam. Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum, repudiandae reprehenderit provident magni labore perspiciatis voluptas tempore quia ullam magnam! Error harum qui quae culpa dolores deleniti earum, delectus aperiam. </p>
+                <h4 class="learn2">Learn More</h2>
+            </div>
+        </div>
+        <div class="div3">
+            <div class="content3">
+                <h1 class="content3-title">Game Info</h1>
+                <p class="content3-p">Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum, repudiandae reprehenderit provident magni labore perspiciatis voluptas tempore quia ullam magnam! Error harum qui quae culpa dolores deleniti earum, delectus aperiam. Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum, repudiandae reprehenderit provident magni labore perspiciatis voluptas tempore quia ullam magnam! Error harum qui quae culpa dolores deleniti earum, delectus aperiam. </p>
+                <h4 class="learn3">Learn More</h2>
+            </div>
+        </div>
+    </div>
+
+    <div class="slider-wrap">
+        <h1 class="book-title">Core Books</h1>
+    <div class="slider">
+        <div class="slide-track">
+            <div class="slide"><img src="../client/src/assets/images/logo192.png"></div>
+            <div class="slide"><img src="../client/src/assets/images/dungeon-masters-guide.png"></div>
+            <div class="slide"><img src="../client/src/assets/images/tashas-cauldron-of-everything.png"></div>
+            <div class="slide"><img src="../client/src/assets/images/mordenkainens-tome-of-foes.png"></div>
+            <div class="slide"><img src="../client/src/assets/images/xanathars-guide-to-everything.png"></div>
+            <div class="slide"><img src="../client/src/assets/images/logo192.png"></div>
+            <div class="slide"><img src="../client/src/assets/images/fizbans-treasury-of-dragons.png"></div>
+            <div class="slide"><img src="../client/src/assets/images/monster-manual.png"></div>
+        </div>
+    </div>
+    <p class="book-p"> Shop for some of these amazing Core Rule books to start your adventure today!</p>
+    </div>
+
+    <div class= "reviews">
+        <div class="reviews1">
+            <div class="content1">
+                <img class= "pic1" src="../client/src/assets/images/cameronbiopic.jpg">
+                <h1 class="review1-title">Hank Hankins</h1>
+                <p class="content1-p">This site is bad ass!</p>
+                <div class="stars">
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star-half-o" aria-hidden="true"></i>
+                </div>
+            </div>
+        </div>
+        <div class="reviews2">
+            <div class="content2">
+                <img class= "pic2" src="../client/src/assets/images/cameronbiopic.jpg">
+                <h1 class="review2-title">Cameron Clark</h1>
+                <p class="content2-p">This site makes me cum!</p>
+                <div class="stars">
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                </div>
+            </div>
+        </div>
+        <div class="reviews3">
+            <div class="content3">
+                <img class= "pic3" src="../client/src/assets/images/cameronbiopic.jpg">
+                <h1 class="review3-title">William Gartman</h1>
+                <p class="content3-p">This site makes me want to shoot more racoons.</p>
+                <div class="stars">
+                    <i class="fa fa-star-half-o" aria-hidden="true"></i>
+                    <i class="fa fa-star-o" aria-hidden="true"></i>
+                    <i class="fa fa-star-o" aria-hidden="true"></i>
+                    <i class="fa fa-star-o" aria-hidden="true"></i>
+                    <i class="fa fa-star-o" aria-hidden="true"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <section class="footer" data-sr-id="8" style="visibility: visible; opacity: 1; transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); transition: opacity 2s cubic-bezier(0.5, 0, 0, 1) 0.7s, transform 2s cubic-bezier(0.5, 0, 0, 1) 0.7s;">
+        <div class="footer-text">
+            <h1 class="logo-footer">D&D Beyond</h1>
+            <h3 class="est-footer">Est. 2022</h3>
+        </div>
+        <div class="github">
+            <a href="https://github.com/dmcarver01611">
+            <i class="fa fa-github fa-2x" aria-hidden="true"></i>
+            </a>
+            <a href="https://github.com/sankeatan">
+            <i class="fa fa-github fa-2x" aria-hidden="true"></i>
+            </a>
+            <a href="https://github.com/Wngartman">
+            <i class="fa fa-github fa-2x" aria-hidden="true"></i>
+            </a>
+            <a href="https://github.com/Hank5050">
+            <i class="fa fa-github fa-2x" aria-hidden="true"></i>
+            </a>
+        </div>
+        </section>
+    </footer>
+
+  </body>
+  
