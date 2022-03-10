@@ -12,7 +12,8 @@ const Landing = () => {
                 <div className="videoContainer">
                     <div className="videoWrapper">
                     <video autoPlay muted loop id="Video">
-                    <source className="video" src={video} type="video/mp4"></source>
+                    <source className="video" src={video} type="video/mp4">
+                    </source>
                     </video>
                     </div>
                 </div>
