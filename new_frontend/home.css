@@ -240,7 +240,7 @@ footer{
 .slider .slide-track {
     animation: scroll 80s linear infinite;
     display: flex;
-    width: calc(250px * 18);
+    width: calc(250px * 8);
 
 }
 
@@ -300,19 +300,19 @@ footer{
 }
 
 .review1-title{
-    margin-top: 12vh;
+    margin-top: 3vh;
     text-align: center;
     font-size: 1.5em;
 }
 
 .review2-title{
-    margin-top: 12vh;
+    margin-top: 3vh;
     text-align: center;
     font-size: 1.5em;
 }
 
 .review3-title{
-    margin-top: 12vh;
+    margin-top: 3vh;
     text-align: center;
     font-size: 1.5em;
 }
@@ -324,4 +324,31 @@ footer{
 .stars{
     margin-top: 2vh;
     text-align: center;
+}
+
+.pic1{
+    height: 120px;
+    width: 120px;
+    border-radius: 50%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.pic2{
+    height: 120px;
+    width: 120px;
+    border-radius: 50%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.pic3{
+    height: 120px;
+    width: 120px;
+    border-radius: 50%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
