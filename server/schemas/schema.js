@@ -4,6 +4,8 @@ const schemaComposer = require('graphql-compose').schemaComposer;
 const AbilityScore = require('../models/abilityScore');
 const Alignment = require('../models/alignment');
 const Background = require('../models/background');
+const Character = require('../models/character');
+const CharacterBuild = require('../models/characterBuiild');
 const Condition = require('../models/condition');
 const Class = require('../models/class');
 const DamageType = require('../models/damageType');
@@ -25,12 +27,15 @@ const Spell = require('../models/spell');
 const Subclass = require('../models/subclass');
 const Subrace = require('../models/subrace');
 const Trait = require('../models/trait');
+const User = require('../models/user');
 const WeaponProperty = require('../models/weaponProperty');
 
 const customizationOptions = {};
 const AbilityScoreTC = composeMongoose(AbilityScore);
 const AlignmentTC = composeMongoose(Alignment);
 const BackgroundTC = composeMongoose(Background);
+const CharacterTC = composeMongoose(Character);
+const CharacterBuildTC = composeMongoose(CharacterBuild);
 const ClassTC = composeMongoose(Class);
 const ConditionTC = composeMongoose(Condition);
 const DamageTypeTC = composeMongoose(DamageType);
@@ -52,6 +57,7 @@ const SpellTC = composeMongoose(Spell);
 const SubclassTC = composeMongoose(Subclass);
 const SubraceTC = composeMongoose(Subrace);
 const TraitTC = composeMongoose(Trait);
+const UserTC = composeMongoose(User);
 const WeaponPropertyTC = composeMongoose(WeaponProperty);
 
 // TODO: Figure out how to use commented out relations without breaking GraphQL Playground.
