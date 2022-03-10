@@ -13,6 +13,7 @@ body{
 
 .videoWrapper{
     overflow:hidden;
+    pointer-events:none;
 }
 
 .videoWrapper > video{
