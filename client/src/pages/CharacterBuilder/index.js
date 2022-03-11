@@ -1,9 +1,7 @@
 import React from 'react';
 
-import { Link } from 'react-router-dom';
-import '../CharacterBuilder/style.css';
 
-import Auth from '../../utils/auth';
+import '../CharacterBuilder/style.css';
 
 const CharacterBuilder = () => {
     return (
