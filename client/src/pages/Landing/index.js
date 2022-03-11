@@ -1,4 +1,8 @@
 import React from 'react';
+<<<<<<< HEAD
+=======
+
+>>>>>>> cad539ecab8eabf657b8c85323db96188335b0de
 import { Link } from 'react-router-dom';
 import '../Landing/style.css';
 import video from '../../assets/videos/ship.mp4'
@@ -10,8 +14,9 @@ const Landing = () => {
             <div>
                 <div className="videoContainer">
                     <div className="videoWrapper">
-                    <video autoPlay muted loop controls id="Video">
-                    <source className="video" src={video} type="video/mp4"></source>
+                    <video autoPlay muted loop id="Video">
+                    <source className="video" src={video} type="video/mp4">
+                    </source>
                     </video>
                     </div>
                 </div>
