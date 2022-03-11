@@ -58,6 +58,7 @@ const WeaponPropertyTC = composeMongoose(WeaponProperty);
 // Commented out relations lead to circular dependencies. This causes graphql introspection to enter an infinite recursive loop,
 // breaking GraphQL Playground.
 
+
 AbilityScoreTC.addRelation('skills', {
   resolver: () => SkillTC.mongooseResolvers.findMany(customizationOptions),
   prepareArgs: {

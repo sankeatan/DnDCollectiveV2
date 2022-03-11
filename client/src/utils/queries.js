@@ -2,7 +2,7 @@ import { gql } from '@apollo/client';
 
 export const QUERY_ABILITY_SCORE = gql`
   query getAbilityScore {
-    ability_scores {
+    ability_score {
       _id
       desc
       full_name
@@ -10,7 +10,6 @@ export const QUERY_ABILITY_SCORE = gql`
       name
       skills
       url
-      
     }
   }
 `;
