@@ -61,5 +61,5 @@ const UserPage = () => {
   );
 };
 
-export default Profile;
+export default userPage;
 */
