@@ -5,11 +5,6 @@ import { useQuery } from '@apollo/client';
 // import ThoughtForm from '../components/ThoughtForm';
 // import ThoughtList from '../components/ThoughtList';
 
-<<<<<<< HEAD:client/src/pages/Profile.js
-=======
-// import { QUERY_USER, QUERY_ME } from '../utils/queries';
-
->>>>>>> c881d70853215f990b5ec9e45dd35230afbfdc3d:client/src/components/UserPage/UserPage.js
 import Auth from '../utils/auth';
 
 const UserPage = () => {
@@ -66,9 +61,5 @@ const UserPage = () => {
   );
 };
 
-<<<<<<< HEAD:client/src/pages/Profile.js
 export default Profile;
 */
-=======
-export default UserPage;
->>>>>>> c881d70853215f990b5ec9e45dd35230afbfdc3d:client/src/components/UserPage/UserPage.js
