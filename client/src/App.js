@@ -11,8 +11,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 import Home from './pages/Home';
 import Landing from './pages/Landing';
-import Profile from './pages/Profile';
 import UserPage from './pages/UserPage';
+import CharacterBuilder from './pages/CharacterBuilder';
 
 
 // Construct our main GraphQL API endpoint
@@ -59,8 +59,12 @@ function App() {
                 element={<UserPage />}
               />
               <Route 
-                path="/UserPage/:username"
+                path="/userPage/:username"
                 element={<UserPage />}
+              />
+              <Route 
+                path="/characterBuilder"
+                element={<CharacterBuilder />}
               />
             </Routes>
           </div>
