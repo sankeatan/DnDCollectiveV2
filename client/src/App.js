@@ -7,10 +7,19 @@ import {
 } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 import Home from './pages/Home';
 import Landing from './pages/Landing';
+<<<<<<< HEAD
 import Profile from './pages/Profile';
+=======
+import Signup from './pages/Signup';
+import Login from './components/Login';
+import SingleThought from './pages/SingleThought';
+import UserPage from './components/UserPage';
+import Header from './components/Header';
+>>>>>>> c881d70853215f990b5ec9e45dd35230afbfdc3d
 import Footer from './components/Footer';
 
 // Construct our main GraphQL API endpoint
@@ -54,11 +63,11 @@ function App() {
               />
               <Route 
                 path="/me"
-                element={<Profile />}
+                element={<UserPage />}
               />
               <Route 
-                path="/profiles/:username"
-                element={<Profile />}
+                path="/UserPage/:username"
+                element={<UserPage />}
               />
             </Routes>
           </div>
