@@ -7,8 +7,8 @@ body{
 }
 
 .home-header{
-    background-color: whitesmoke;
-    height: 10vh
+    background-color: rgba(56, 124, 124, 0.863);
+    height: 10vh;
 }
 
 .title{
@@ -23,9 +23,18 @@ body{
     margin-top: 1vh;
 }
 
+.top-bar-item{
+    text-decoration: none !important;
+    color: rgb(53, 52, 52)
+}
+
+.nav-custom{
+    color: whitesmoke !important;
+}
+
 .navbar-custom{
     margin-top: -3vh;
-    background-color: gray;
+    background-color: rgb(49, 49, 49);
     border-bottom: 1px solid rgba(0, 0, 0, 0.137)
 }
 
@@ -238,7 +247,7 @@ footer{
 }
 
 .slider .slide-track {
-    animation: scroll 80s linear infinite;
+    animation: scroll 80s infinite;
     display: flex;
     width: calc(250px * 8);
 
@@ -258,7 +267,7 @@ footer{
         transform: translateX(0);
     }
     100% {
-        transform: translateX(calc(-250px * 9));
+        transform: translateX(calc(-250px * 8));
     }
 }
 
@@ -289,6 +298,7 @@ footer{
 
 .reviews1{
     border: .1px solid rgba(0, 0, 0, 0.301);
+    margin-left: 15px;
 }
 
 .reviews2{
@@ -297,6 +307,7 @@ footer{
 
 .reviews3{
     border: .1px solid rgba(0, 0, 0, 0.301);
+    margin-right: 15px;
 }
 
 .review1-title{
@@ -351,4 +362,9 @@ footer{
     display: block;
     margin-left: auto;
     margin-right: auto;
+}
+
+.slider-wrap{
+    margin-right: 15px;
+    margin-left: 15px;
 }
