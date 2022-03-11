@@ -6,7 +6,6 @@ const Header = () => {
   return (
     <header className="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom home-header">
     <Link className="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
-    <svg className="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
     <span className="fs-4">D&D Beyond</span>
     </Link>
 
