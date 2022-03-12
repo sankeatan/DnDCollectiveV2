@@ -1,31 +1,31 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const ThoughtList = ({
-  thoughts,
+const CharacterCardList = ({
+  characters,
   title,
   showTitle = true,
   showUsername = true,
 }) => {
-  if (!thoughts.length) {
-    return <h3>No Thoughts Yet</h3>;
+  if (!characters.length) {
+    return <h3>No Characters Yet</h3>;
   }
 
   return (
     <div>
       {showTitle && <h3>{title}</h3>}
-      {thoughts &&
-        thoughts.map((thought) => (
-          <div key={thought._id} className="card mb-3">
+      {characters &&
+        characters.map((character) => (
+          <div key={character._id} className="card mb-3">
             <h4 className="card-header bg-primary text-light p-2 m-0">
               {showUsername ? (
                 <Link
                   className="text-light"
-                  to={`/profiles/${thought.thoughtAuthor}`}
+                  to={`/profiles/${character.username}`}
                 >
-                  {thought.thoughtAuthor} <br />
+                  {character.username} <br />
                   <span style={{ fontSize: '1rem' }}>
-                    had this thought on {thought.createdAt}
+                    created on {character.createdAt}
                   </span>
                 </Link>
               ) : (
@@ -51,4 +51,4 @@ const ThoughtList = ({
   );
 };
 
-export default ThoughtList;
+export default CharacterCardList;
