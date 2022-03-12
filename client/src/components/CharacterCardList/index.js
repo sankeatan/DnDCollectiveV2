@@ -31,19 +31,19 @@ const CharacterCardList = ({
               ) : (
                 <>
                   <span style={{ fontSize: '1rem' }}>
-                    You had this thought on {thought.createdAt}
+                    You had this thought on {character.createdAt}
                   </span>
                 </>
               )}
             </h4>
             <div className="card-body bg-light p-2">
-              <p>{thought.thoughtText}</p>
+              <p>{character.desc}</p>
             </div>
             <Link
               className="btn btn-primary btn-block btn-squared"
-              to={`/thoughts/${thought._id}`}
+              to={`/chracter/${character._id}`}
             >
-              Join the discussion on this thought.
+              Join the discussion on this character
             </Link>
           </div>
         ))}
