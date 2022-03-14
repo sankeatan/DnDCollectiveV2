@@ -2,6 +2,11 @@ const { Schema, model } = require('mongoose');
 const dateFormat = require('../utils/dateFormat');
 
 const characterPostSchema = new Schema({
+  character:
+        {
+          type: Schema.Types.ObjectId,
+          ref: 'Character',
+        },
   postText: {
     type: String,
     required: 'You need to leave a thought!',
