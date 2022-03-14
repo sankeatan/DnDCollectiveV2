@@ -1,7 +1,7 @@
 const { Schema, model } = require('mongoose');
 const dateFormat = require('../utils/dateFormat');
 
-const characterPostSchema = new Schema({
+const characterBuildSchema = new Schema({
   character:
         {
           type: Schema.Types.ObjectId,
