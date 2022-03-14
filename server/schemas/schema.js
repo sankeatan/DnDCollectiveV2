@@ -27,8 +27,9 @@ const Spell = require('../models/spell');
 const Subclass = require('../models/subclass');
 const Subrace = require('../models/subrace');
 const Trait = require('../models/trait');
-const User = require('../models/user');
 const WeaponProperty = require('../models/weaponProperty');
+// Creates User variable to acess the user model
+const User = require('../models/user');
 
 const customizationOptions = {};
 const AbilityScoreTC = composeMongoose(AbilityScore);
@@ -57,7 +58,8 @@ const SpellTC = composeMongoose(Spell);
 const SubclassTC = composeMongoose(Subclass);
 const SubraceTC = composeMongoose(Subrace);
 const TraitTC = composeMongoose(Trait);
-const WeaponPropertyTC = composeMongoose(WeaponProperty);
+const WeaponPropertyTC = composeMongoose(WeaponProperty);ffff
+// Creates the user Type compose to easily create the type def
 const UserTC = composeMongoose(User)
 
 // TODO: Figure out how to use commented out relations without breaking GraphQL Playground.
@@ -387,6 +389,7 @@ TraitTC.addRelation('proficiencies', {
 // });
 
 schemaComposer.Query.addFields({
+  // Creates the user and users querys and resolvers and gets the results from customonizationOptions
   user: UserTC.mongooseResolvers.findOne(customizationOptions),
   users: UserTC.mongooseResolvers.findMany(customizationOptions),
   abilityScore: AbilityScoreTC.mongooseResolvers.findOne(customizationOptions),
@@ -442,4 +445,5 @@ schemaComposer.Query.addFields({
 });
 
 const graphqlSchema = schemaComposer.buildSchema();
+// Exports schema
 module.exports = graphqlSchema;
