@@ -79,7 +79,11 @@ const Character = new Schema({
     spellcasting: Spellcasting,
     skills: [ { type: String, index: true } ],
     subclass: { type: String, index: true },
-    spell: Spell,
+    user:
+        {
+          type: Schema.Types.ObjectId,
+          ref: 'User',
+        },
 });
 
 module.exports = mongoose.model('Character', Character, 'character');
