@@ -1,29 +1,35 @@
 import React from 'react';
 
+const CharBuildOptionBtns = () => {
+    return (
 <nav className="navbar navbar-expand-lg-build navbar-light buildnav">
-    <div class="collapse navbar-collapse-build" id="navbarNav">
-    <ul class="navbar-nav">
-        <li class="nav-item-build active">
-        <button class="nav-link" href="#">Race</button>
+    <div className="collapse navbar-collapse-build" id="navbarNav">
+    <ul className="navbar-nav">
+        <li className="nav-item-build active">
+        <button className="nav-link" href="#">Race</button>
         </li>
-        <li class="nav-item-build ">
-        <button class="nav-link" href="#">Class</button>
+        <li className="nav-item-build ">
+        <button className="nav-link" href="#">Class</button>
         </li>
-        <li class="nav-item-build ">
-        <a class="nav-link disabled" href="#">Ability Scores</a>
+        <li className="nav-item-build ">
+        <button className="nav-link disabled" href="#">Ability Scores</button>
         </li>
-        <li class="nav-item-build ">
-        <a class="nav-link disabled" href="#">Languages</a>
+        <li className="nav-item-build ">
+        <button className="nav-link disabled" href="#">Languages</button>
         </li>
-        <li class="nav-item-build ">
-            <a class="nav-link disabled" href="#">Proficiencies</a>
+        <li className="nav-item-build ">
+            <button className="nav-link disabled" href="#">Proficiencies</button>
         </li>
-        <li class="nav-item-build ">
-            <a class="nav-link disabled" href="#">Feats</a>
+        <li className="nav-item-build ">
+            <button className="nav-link disabled" href="#">Feats</button>
         </li>
-        <li class="nav-item-build ">
-            <a class="nav-link disabled" href="#">Inventory</a>
+        <li className="nav-item-build ">
+            <button className="nav-link disabled" href="#">Inventory</button>
         </li>
     </ul>
     </div>
 </nav>
+);
+};
+
+export default CharBuildOptionBtns;
