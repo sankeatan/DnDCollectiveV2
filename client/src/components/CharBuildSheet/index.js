@@ -17,59 +17,59 @@ const CharBuildSheet = (props) => {
         <button id="female" value="Female">Female</button>
         </div>
         <div className="card-body">
-        <h5 className="card-title" id="race_title"></h5> 
-        <h5 className="card-title class_title"></h5>
+        <h5 className="card-title" id="race_title">{props.race}</h5> 
+        <h5 className="card-title class_title">{props.Class}</h5>
         <hr>
         <div className="stats">
         <div className="health">
-        <h8 id="hitpoints">HP: 0</h8>
+        <h8 id="hitpoints">HP: {props.hp}</h8>
         <p></p>
         </div>
         <div>
         <h8 className="background-title">Background:</h8>
         </div>
         <div>
-        <p id="background"> Acolyte</p>
+        <p id="background">{props.background}</p>
         </div>
         <div className="null">
         </div>
         <div className="strength">
-            <h8>STR: </h8>
+            <h8>STR: {props.str}</h8>
         </div>
         <div className="null">
         </div>
         <div className="null">
         </div>
         <div className="constitution">
-            <h8>CON: </h8>
+            <h8>CON: {props.con}</h8>
         </div>
         <div className="null">
         </div>
         <div className="null">
         </div>
         <div className="dexterity">
-            <h8>DEX: </h8>
+            <h8>DEX: {props.dex}</h8>
         </div>
         <div className="null">
         </div>
         <div className="null">
         </div>
         <div className="intelligence">
-            <h8>INT: </h8>
+            <h8>INT: {props.int}</h8>
         </div>
         <div className="null">
         </div>
         <div className="null">
         </div>
         <div className="wisdom">
-            <h8>WIS: </h8>
+            <h8>WIS: {props.wis}</h8>
         </div>
         <div className="null">
         </div>
         <div className="null">
         </div>
         <div className="charisma">
-            <h8>CHA: </h8>
+            <h8>CHA: {props.cha}</h8>
         </div>
         </div>
             <div className="card-body2">
