@@ -4,8 +4,8 @@ const schemaComposer = require('graphql-compose').schemaComposer;
 const AbilityScore = require('../models/abilityScore');
 const Alignment = require('../models/alignment');
 const Background = require('../models/background');
-const Character = require('../models/character');
-const CharacterBuild = require('../models/characterBuiild');
+// const Character = require('../models/character');
+// const CharacterBuild = require('../models/characterBuiild');
 const Condition = require('../models/condition');
 const Class = require('../models/class');
 const DamageType = require('../models/damageType');
@@ -34,8 +34,8 @@ const customizationOptions = {};
 const AbilityScoreTC = composeMongoose(AbilityScore);
 const AlignmentTC = composeMongoose(Alignment);
 const BackgroundTC = composeMongoose(Background);
-const CharacterTC = composeMongoose(Character);
-const CharacterBuildTC = composeMongoose(CharacterBuild);
+// const CharacterTC = composeMongoose(Character);
+// const CharacterBuildTC = composeMongoose(CharacterBuild);
 const ClassTC = composeMongoose(Class);
 const ConditionTC = composeMongoose(Condition);
 const DamageTypeTC = composeMongoose(DamageType);
@@ -57,8 +57,8 @@ const SpellTC = composeMongoose(Spell);
 const SubclassTC = composeMongoose(Subclass);
 const SubraceTC = composeMongoose(Subrace);
 const TraitTC = composeMongoose(Trait);
-const UserTC = composeMongoose(User);
 const WeaponPropertyTC = composeMongoose(WeaponProperty);
+const UserTC = composeMongoose(User)
 
 // TODO: Figure out how to use commented out relations without breaking GraphQL Playground.
 // Commented out relations lead to circular dependencies. This causes graphql introspection to enter an infinite recursive loop,
@@ -387,6 +387,8 @@ TraitTC.addRelation('proficiencies', {
 // });
 
 schemaComposer.Query.addFields({
+  user: UserTC.mongooseResolvers.findOne(customizationOptions),
+  users: UserTC.mongooseResolvers.findMany(customizationOptions),
   abilityScore: AbilityScoreTC.mongooseResolvers.findOne(customizationOptions),
   abilityScores: AbilityScoreTC.mongooseResolvers.findMany(customizationOptions),
   alignment: AlignmentTC.mongooseResolvers.findOne(customizationOptions),

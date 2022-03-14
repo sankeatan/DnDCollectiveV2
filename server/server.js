@@ -2,14 +2,13 @@ const express = require('express');
 const { ApolloServer } = require('apollo-server-express');
 const path = require('path');
 const { authMiddleware } = require('./utils/auth');
-// import schema from './schemas/schema';
+
 const { typeDefs, resolvers } = require('./schemas');
 const schema = require('./schemas/schema')
-// const {graphqlSchema } = require('./schemas');
 const db = require('./config/connection');
 
 const PORT = process.env.PORT || 3001;
-const app = express();
+const app = express(); 
 const server = new ApolloServer({
   schema,
   typeDefs,
@@ -30,7 +29,7 @@ app.get('/', (req, res) => {
 
 
 // Create a new instance of an Apollo server with the GraphQL schema
-const startApolloServer = async (typeDefs, resolvers) => {
+const startApolloServer = async (typeDefs, resolvers, schema) => {
   await server.start();
   server.applyMiddleware({ app });
   
@@ -43,4 +42,4 @@ const startApolloServer = async (typeDefs, resolvers) => {
   };
   
 // Call the async function to start the server
-  startApolloServer(schema, typeDefs, resolvers);
+  startApolloServer(schema);
