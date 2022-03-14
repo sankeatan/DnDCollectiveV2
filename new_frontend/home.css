@@ -250,7 +250,6 @@ footer{
     animation: scroll 80s infinite;
     display: flex;
     width: calc(250px * 8);
-
 }
 
 .slider .slide-track:hover {
