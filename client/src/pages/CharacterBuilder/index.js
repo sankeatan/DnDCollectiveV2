@@ -24,7 +24,7 @@ const CharacterBuilder = () => {
                 <CharBuildFooter />
         </div>
 </main>
-    );
+);
 };
 
 export default CharacterBuilder;
