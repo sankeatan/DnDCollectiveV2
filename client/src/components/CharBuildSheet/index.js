@@ -3,22 +3,13 @@ import React, { useState } from 'react';
 const CharBuildSheet = (props) => {
 
     const [gender, setGender] = useState("female");
-    const [race, setRace] = useState("dragonborn");
-    const [Class, setClass] = useState("fighter");
-    const [background, setBackground] = useState("acolyte");
-    const [str, setStr] = useState(0);
-    const [dex, setDex] = useState(0);
-    const [con, setCon] = useState(0);
-    const [int, setInt] = useState(0);
-    const [wis, setWis] = useState(0);
-    const [cha, setCha] = useState(0);
 
     return (
     <div className="build1 content-row">
     <div className="card card-custom" style="width: 18rem;">
         <h5 className="card-title card-title-custom">
         <input type="text" id="name-input" placeholder="Character Name"></input></h5>
-        <img className="card-img-top" src="/images/DragonbornMaleIcon.png" alt="character profile image" id='profile_img'></img>
+        <img className="card-img-top" src="/images/DragonbornMaleIcon.png" alt="character profile" id='profile_img'></img>
         <div className="gender-wrapper1">
         <button id="male" value="Male">Male</button>
         </div>
