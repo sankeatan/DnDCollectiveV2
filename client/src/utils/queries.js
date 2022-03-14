@@ -8,7 +8,6 @@ export const QUERY_ABILITY_SCORE = gql`
       full_name
       index
       name
-      url
     }
   }
 `;
@@ -21,7 +20,6 @@ export const QUERY_ONE_ABILITY_SCORE = gql`
       full_name
       index
       name
-      url
       }
   }
 `;
@@ -34,7 +32,6 @@ export const QUERY_ALIGNMENT = gql`
       abbreviation
       index
       name
-      url
       
     }
   }
@@ -48,7 +45,6 @@ export const QUERY_ONE_ALIGNMENT = gql`
       abbreviation
       index
       name
-      url
       }
   }
 `;
@@ -59,7 +55,6 @@ export const QUERY_BACKGROUND = gql`
       _id
       index
       name
-      url
     }
   }
 `;
@@ -70,7 +65,6 @@ export const QUERY_ONE_BACKGROUND = gql`
       _id
       index
       name
-      url
       }
   }
 `;
@@ -84,7 +78,6 @@ export const QUERY_CLASS = gql`
       index
       name
       spells
-      url
     }
   }
 `;
@@ -98,7 +91,6 @@ export const QUERY_ONE_CLASS = gql`
       index
       name
       spells
-      url
       }
   }
 `;
@@ -110,7 +102,6 @@ export const QUERY_CONDITION = gql`
       desc
       index
       name
-      url
     }
   }
 `;
@@ -122,7 +113,6 @@ export const QUERY_ONE_CONDITION = gql`
       desc
       index
       name
-      url
       }
   }
 `;
@@ -134,7 +124,6 @@ export const QUERY_DAMAGE_TYPE = gql`
       desc
       index
       name
-      url
     }
   }
 `;
@@ -146,7 +135,6 @@ export const QUERY_ONE_DAMAGE_TYPE = gql`
       desc
       index
       name
-      url
       }
   }
 `;
@@ -166,7 +154,6 @@ export const QUERY_EQUIPMENT = gql`
       stealth_disadvantage
       str_minimum
       tool_category
-      url
       vehicle_category
       weapon_category
       weapon_range
@@ -190,7 +177,6 @@ export const QUERY_ONE_EQUIPMENT = gql`
       stealth_disadvantage
       str_minimum
       tool_category
-      url
       vehicle_category
       weapon_category
       weapon_range
@@ -205,7 +191,6 @@ export const QUERY_EQUIPMENT_CATEGORY = gql`
       _id
       index
       name
-      url
     }
   }
 `;
@@ -216,7 +201,6 @@ export const QUERY_ONE_EQUIPMENT_CATEGORY = gql`
       _id
       index
       name
-      url
       }
   }
 `;
@@ -227,7 +211,6 @@ export const QUERY_FEAT= gql`
       _id
       index
       name
-      url
     }
   }
 `;
@@ -238,7 +221,6 @@ export const QUERY_ONE_FEAT = gql`
       _id
       index
       name
-      url
       }
   }
 `;
@@ -252,7 +234,6 @@ export const QUERY_FEATURE= gql`
       level
       name
       reference
-      url
     }
   }
 `;
@@ -266,7 +247,6 @@ export const QUERY_ONE_FEATURE = gql`
       level
       name
       reference
-      url
       }
   }
 `;
@@ -281,7 +261,6 @@ export const QUERY_LANGUAGE= gql`
       script
       type
       typical_speakers
-      url
     }
   }
 `;
@@ -296,7 +275,6 @@ export const QUERY_ONE_LANGUAGE = gql`
       script
       type
       typical_speakers
-      url
       }
   }
 `;
@@ -309,7 +287,6 @@ export const QUERY_LEVEL= gql`
       index
       level
       prof_bonus
-      url
     }
   }
 `;
@@ -322,7 +299,6 @@ export const QUERY_ONE_LEVEL = gql`
       index
       level
       prof_bonus
-      url
       }
   }
 `;
@@ -334,7 +310,6 @@ export const QUERY_MAGIC_ITEM= gql`
       desc
       index
       name
-      url
     }
   }
 `;
@@ -346,7 +321,6 @@ export const QUERY_ONE_MAGIC_ITEM = gql`
       desc
       index
       name
-      url
       }
   }
 `;
@@ -358,7 +332,6 @@ export const QUERY_MAGIC_SCHOOL= gql`
       desc
       index
       name
-      url
     }
   }
 `;
@@ -370,7 +343,6 @@ export const QUERY_ONE_MAGIC_SCHOOL = gql`
       desc
       index
       name
-      url
       }
   }
 `;
@@ -382,7 +354,6 @@ export const QUERY_PROFICIENCY= gql`
       index
       name
       type
-      url
     }
   }
 `;
@@ -394,7 +365,6 @@ export const QUERY_ONE_PROFICIENCY = gql`
       index
       name
       type
-      url
       }
   }
 `;
@@ -411,7 +381,6 @@ export const QUERY_RACE= gql`
       size
       size_description
       speed
-      url
     }
   }
 `;
@@ -428,7 +397,6 @@ export const QUERY_ONE_RACE = gql`
       size
       size_description
       speed
-      url
       }
   }
 `;
@@ -440,7 +408,6 @@ export const QUERY_RULE= gql`
       desc
       index
       name
-      url
     }
   }
 `;
@@ -452,7 +419,6 @@ export const QUERY_ONE_RULE = gql`
       desc
       index
       name
-      url
       }
   }
 `;
@@ -464,7 +430,6 @@ export const QUERY_RULE_SECTION= gql`
       desc
       index
       name
-      url
     }
   }
 `;
@@ -476,7 +441,6 @@ export const QUERY_ONE_RULE_SECTION = gql`
       desc
       index
       name
-      url
       }
   }
 `;
@@ -488,7 +452,6 @@ export const QUERY_SKILL= gql`
       desc
       index
       name
-      url
     }
   }
 `;
@@ -500,7 +463,6 @@ export const QUERY_ONE_SKILL = gql`
       desc
       index
       name
-      url
       }
   }
 `;
@@ -523,7 +485,6 @@ export const QUERY_SPELL= gql`
       name
       range
       ritual
-      url
     }
   }
 `;
@@ -546,7 +507,6 @@ export const QUERY_ONE_SPELL = gql`
       name
       range
       ritual
-      url
       }
   }
 `;
@@ -560,7 +520,6 @@ export const QUERY_SUBCLASS= gql`
       name
       subclass_flavor
       subclass_levels
-      url
     }
   }
 `;
@@ -574,7 +533,6 @@ export const QUERY_ONE_SUBCLASS = gql`
       name
       subclass_flavor
       subclass_levels
-      url
       }
   }
 `;
@@ -586,7 +544,6 @@ export const QUERY_SUBRACE= gql`
       desc
       index
       name
-      url
     }
   }
 `;
@@ -598,7 +555,6 @@ export const QUERY_ONE_SUBRACE = gql`
       desc
       index
       name
-      url
       }
   }
 `;
