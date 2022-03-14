@@ -1,5 +1,7 @@
 import React from 'react';
 
+const CharBuildOptionBtns = () => { 
+
 <nav className="navbar navbar-expand-lg-build navbar-light buildnav">
     <div class="collapse navbar-collapse-build" id="navbarNav">
     <ul class="navbar-nav">
@@ -27,3 +29,7 @@ import React from 'react';
     </ul>
     </div>
 </nav>
+
+};
+
+export default CharBuildOptionBtns;
