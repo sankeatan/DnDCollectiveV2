@@ -1,0 +1,121 @@
+html{
+    overflow:visible;
+}
+
+body{
+    background-color: gainsboro;
+}
+
+.home-header{
+    background-color: rgba(56, 124, 124, 0.863);
+    height: 10vh;
+}
+
+.title{
+    display:flex;
+    justify-content: center;
+    font-family: "Poppins", sans-serif;
+    font-size: 2.5em !important;
+    font-weight: 700;
+}
+
+.buildnav{
+    height: 50px;
+    display: flex;
+    justify-content: center!important;
+    margin-top: .5%;
+    margin-left: 27%;
+    margin-right: 2%!important;
+    background-color: rgba(0, 0, 0, 0.233);
+    border: .1px solid rgba(0, 0, 0, 0.301);
+    width: 46%
+}
+
+.navbar-expand-lg-build .navbar-collapse-build {
+    display: flex;
+    justify-content: center!important;
+}
+
+.navbar-nav{
+    flex-direction: row!important;
+}
+
+.nav-item-build  {
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    padding-right: 50px;
+}
+
+.nav-pills{
+    margin-top: 1vh;
+}
+
+.top-bar-item{
+    text-decoration: none !important;
+    color: rgb(53, 52, 52)
+}
+
+.nav-custom{
+    color: whitesmoke !important;
+}
+
+.navbar-custom{
+    margin-top: -3vh;
+    background-color: rgb(49, 49, 49);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.137)
+}
+
+.nav-items{
+    margin-left: 3vh;
+}
+
+
+.gridwrap {
+    max-height: 80%;
+    margin-left: 2%;
+    margin-right: 2%;
+    margin-top: .5%;
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-rows: 1fr;
+    grid-column-gap: 30px;
+    grid-row-gap: 0px;
+    margin-bottom: 100px;
+    }
+
+
+.build1 {
+    background-color: rgba(0, 0, 0, 0.233);
+    border: .1px solid rgba(0, 0, 0, 0.301);
+    position: relative;
+}
+
+.build2 {
+    background-color: rgba(0, 0, 0, 0.233);
+    height: 530%;
+    border: .1px solid rgba(0, 0, 0, 0.301);
+}
+
+.build3 {
+    background-color: rgba(0, 0, 0, 0.233);
+    border: .1px solid rgba(0, 0, 0, 0.301);
+}
+
+.footer-wrap{
+    position:fixed;
+    bottom:0;
+    width: 100%;
+    height: 8%;
+}
+
+footer{
+    background-color: black;
+    background-color: rgba(56, 124, 124, 0.863);
+    color: black;
+
+}
+
+.name{
+    font-weight: bold;
+}
