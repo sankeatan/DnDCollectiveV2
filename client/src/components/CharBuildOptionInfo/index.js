@@ -1,5 +1,9 @@
 import React from 'react';
 
-const CharBuildOptionInfo = () => { };
+const CharBuildOptionInfo = () => {
+    <div class="build2">
+            
+    </div>
+};
 
 export default CharBuildOptionInfo;
