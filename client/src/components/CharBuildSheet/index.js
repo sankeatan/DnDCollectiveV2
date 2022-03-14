@@ -85,6 +85,7 @@ const CharBuildSheet = (props) => {
                 <button className="card-link" id="save_build">Save Build</button>
                 <button className="card-link" id="character_sheet">Character Sheets</button>
             </div>
+        </hr>
         </div>
     </div>
     </div>
