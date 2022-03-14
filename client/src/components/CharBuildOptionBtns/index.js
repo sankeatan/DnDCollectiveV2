@@ -10,7 +10,7 @@ import React from 'react';
         <button class="nav-link" href="#">Class</button>
         </li>
         <li class="nav-item-build ">
-        <a class="nav-link disabled" href="#">Ability Scores</a>
+        <button class="nav-link disabled" href="#">Ability Scores</a>
         </li>
         <li class="nav-item-build ">
         <a class="nav-link disabled" href="#">Languages</a>
