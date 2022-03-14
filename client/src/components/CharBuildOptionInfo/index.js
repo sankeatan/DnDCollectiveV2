@@ -1,9 +1,13 @@
-import React from 'react';
+import React, { useState } from "react";
 
-const CharBuildOptionInfo = () => {
+const CharBuildOptionInfo = (props) => {
+
+    
+
+    return (
     <div class="build2">
             
     </div>
-};
+    )};
 
 export default CharBuildOptionInfo;
