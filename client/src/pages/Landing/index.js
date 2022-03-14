@@ -1,8 +1,4 @@
 import React from 'react';
-<<<<<<< HEAD
-=======
-
->>>>>>> cad539ecab8eabf657b8c85323db96188335b0de
 import { Link } from 'react-router-dom';
 import '../Landing/style.css';
 import video from '../../assets/videos/ship.mp4'
