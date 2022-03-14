@@ -2,6 +2,7 @@ import React from 'react';
 import Header from '../../components/Header';
 import CharBuildFooter from '../../components/CharBuildFooter'
 import NavBar from '../../components/NavBar'
+import { Link } from 'react-router-dom';
 import '../CharacterBuilder/style.css';
 
 const CharacterBuilder = () => {
@@ -13,25 +14,25 @@ const CharacterBuilder = () => {
     <div class="collapse navbar-collapse-build" id="navbarNav">
     <ul class="navbar-nav">
         <li class="nav-item-build active">
-        <a class="nav-link" href="#">Race</a>
+        <Link class="nav-link" href="#">Race</Link>
         </li>
         <li class="nav-item-build ">
-        <a class="nav-link" href="#">Class</a>
+        <Link class="nav-link" href="#">Class</Link>
         </li>
         <li class="nav-item-build ">
-        <a class="nav-link disabled" href="#">Ability Scores</a>
+        <Link class="nav-link disabled" href="#">Ability Scores</Link>
         </li>
         <li class="nav-item-build ">
-        <a class="nav-link disabled" href="#">Languages</a>
+        <Link class="nav-link disabled" href="#">Languages</Link>
         </li>
         <li class="nav-item-build ">
-            <a class="nav-link disabled" href="#">Proficiencies</a>
+            <Link class="nav-link disabled" href="#">Proficiencies</Link>
         </li>
         <li class="nav-item-build ">
-            <a class="nav-link disabled" href="#">Feats</a>
+            <Link class="nav-link disabled" href="#">Feats</Link>
         </li>
         <li class="nav-item-build ">
-            <a class="nav-link disabled" href="#">Inventory</a>
+            <Link class="nav-link disabled" href="#">Inventory</Link>
         </li>
     </ul>
     </div>
