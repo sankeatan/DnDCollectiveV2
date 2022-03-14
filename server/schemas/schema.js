@@ -1,5 +1,6 @@
 const composeMongoose = require('graphql-compose-mongoose').composeMongoose;
 const schemaComposer = require('graphql-compose').schemaComposer;
+// const { signToken } = require('../utils/auth');
 
 const AbilityScore = require('../models/abilityScore');
 const Alignment = require('../models/alignment');
@@ -58,9 +59,10 @@ const SpellTC = composeMongoose(Spell);
 const SubclassTC = composeMongoose(Subclass);
 const SubraceTC = composeMongoose(Subrace);
 const TraitTC = composeMongoose(Trait);
-const WeaponPropertyTC = composeMongoose(WeaponProperty);ffff
+const WeaponPropertyTC = composeMongoose(WeaponProperty);
 // Creates the user Type compose to easily create the type def
 const UserTC = composeMongoose(User)
+
 
 // TODO: Figure out how to use commented out relations without breaking GraphQL Playground.
 // Commented out relations lead to circular dependencies. This causes graphql introspection to enter an infinite recursive loop,
@@ -390,10 +392,10 @@ TraitTC.addRelation('proficiencies', {
 
 schemaComposer.Query.addFields({
   // Creates the user and users querys and resolvers and gets the results from customonizationOptions
-  user: UserTC.mongooseResolvers.findOne(customizationOptions),
-  users: UserTC.mongooseResolvers.findMany(customizationOptions),
   abilityScore: AbilityScoreTC.mongooseResolvers.findOne(customizationOptions),
   abilityScores: AbilityScoreTC.mongooseResolvers.findMany(customizationOptions),
+  user: UserTC.mongooseResolvers.findOne(customizationOptions),
+  users: UserTC.mongooseResolvers.findMany(customizationOptions),
   alignment: AlignmentTC.mongooseResolvers.findOne(customizationOptions),
   alignments: AlignmentTC.mongooseResolvers.findMany(customizationOptions),
   background: BackgroundTC.mongooseResolvers.findOne(customizationOptions),
