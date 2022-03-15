@@ -6,6 +6,7 @@ import video from '../../assets/videos/ship.mp4'
 import Auth from '../../utils/auth';
 
 const Landing = () => {
+
         return (
             <div>
                 <div className="videoContainer">
@@ -27,7 +28,7 @@ const Landing = () => {
                     ) : (
                     <>
                     <p>Your Journey Starts Now</p>
-                    <Link to="/login" className="button1">Log In</Link>
+                    <button onClick = {()=> Auth.login()} className="button1">Log In</button>
                     <Link to="/signup" className="button2">Sign Up</Link>
                     </>)}
                 </div>

@@ -47,7 +47,7 @@ function App() {
           <div className="container">
             <Routes>
               <Route 
-                path="/"
+                pathname="/"
                 element={<Landing />}
               />
               <Route 
