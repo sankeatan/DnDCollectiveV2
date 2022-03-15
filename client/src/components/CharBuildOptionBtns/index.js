@@ -1,4 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, createContext } from 'react';
+
+const choiceContext = createContext();
 
 const CharBuildOptionBtns = () => {
 

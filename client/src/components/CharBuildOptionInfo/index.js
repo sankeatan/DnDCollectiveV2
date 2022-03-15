@@ -2,7 +2,7 @@ import React, { useState, useContext } from "react";
 
 const CharBuildOptionInfo = (props) => {
 
-    const [race, setRace] = useState("dragonborn");
+    const [race, setRace] = useState(props.race);
     const [Class, setClass] = useState("fighter");
     const [background, setBackground] = useState("acolyte");
     const [str, setStr] = useState(0);
