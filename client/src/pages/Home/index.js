@@ -4,6 +4,7 @@ import Footer from '../../components/Footer';
 import { Link } from 'react-router-dom';
 import '../Home/style.css';
 import video from '../../assets/videos/ship.mp4'
+import temporaryPic from '../../assets/images/cameronbiopic.jpg'
 
 
 const Home = () => {
@@ -82,7 +83,7 @@ const Home = () => {
     <div className= "reviews">
         <div className="reviews1">
             <div className="content1">
-                <img className= "pic1" src="../client/src/assets/images/cameronbiopic.jpg" alt=""></img>
+                <img className= "pic1" src={temporaryPic} alt=""></img>
                 <h1 className="review1-title">Hank Hankins</h1>
                 <p className="content1-p">This site is bad ass!</p>
                 <div className="stars">
@@ -96,7 +97,7 @@ const Home = () => {
         </div>
         <div className="reviews2">
             <div className="content2">
-                <img className= "pic2" src="../client/src/assets/images/cameronbiopic.jpg" alt=""></img>
+                <img className= "pic2" src={temporaryPic} alt=""></img>
                 <h1 className="review2-title">Cameron Clark</h1>
                 <p className="content2-p">This site makes me cum!</p>
                 <div className="stars">
@@ -110,7 +111,7 @@ const Home = () => {
         </div>
         <div className="reviews3">
             <div className="content3">
-                <img className= "pic3" src="../client/src/assets/images/cameronbiopic.jpg" alt=""></img>
+                <img className= "pic3" src={temporaryPic} alt=""></img>
                 <h1 className="review3-title">William Gartman</h1>
                 <p className="content3-p">This site makes me want to shoot more racoons.</p>
                 <div className="stars">

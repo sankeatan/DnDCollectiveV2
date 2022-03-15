@@ -4,7 +4,7 @@ const CharBuildSheet = (props) => {
 
     const [gender, setGender] = useState("Female");
     const [charName, setCharName] = useState("Character Name");
-    const [image, setImage] = useState("DragonbornFemalIcon.png")
+    const [image, setImage] = useState("/images/DragonbornFemaleIcon.png")
     const style = {
         width:"18 rem"
     }
@@ -14,12 +14,12 @@ const CharBuildSheet = (props) => {
     <div className="card card-custom" style={style}>
         <h5 className="card-title card-title-custom">
         <input onChange={(e) => setCharName({...charName, e})} type="text" id="name-input" placeholder={charName}></input></h5>
-        <img className="card-img-top" src='/images/DragonbornMaleIcon.png' alt="character profile" id='profile_img'></img>
+        <img className="card-img-top" src={image} alt="character profile" id='profile_img'></img>
         <div className="gender-wrapper1">
-        <button onClick={() => setGender("Male"), setImage(`${props.race}${gender}Icon.png`)} id="male">Male</button>
+        <button onClick={() => setGender("Male"), setImage(`/images/${props.race}${gender}Icon.png`)} id="male">Male</button>
         </div>
         <div className="gender-wrapper2">
-        <button onClick={() => setGender("Female"), setImage(`${props.race}${gender}Icon.png`)} id="female">Female</button>
+        <button onClick={() => setGender("Female"), setImage(`/images/${props.race}${gender}Icon.png`)} id="female">Female</button>
         </div>
         <div className="card-body">
         <h5 className="card-title" id="race_title">{props.race}</h5> 
