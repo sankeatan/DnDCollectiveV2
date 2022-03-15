@@ -31,7 +31,7 @@ const CharacterCardList = ({
               ) : (
                 <>
                   <span style={{ fontSize: '1rem' }}>
-                    You had this thought on {character.createdAt}
+                    You created this character on {character.createdAt}
                   </span>
                 </>
               )}
