@@ -84,6 +84,7 @@ const CharBuildSheet = (props) => {
         </hr>
         </div>
     </div>
+
     </div>
 ) };
 
