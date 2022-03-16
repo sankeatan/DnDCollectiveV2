@@ -1,4 +1,13 @@
 const typeDefs = require('./typeDefs');
 const resolvers = require('./resolvers');
+// const schemaComposer = require('graphql-compose');
+// const graphqlSchema = require('./schema');
 
-// module.exports = { typeDefs, resolvers };
+// schemaComposer.merge(
+//     graphqlSchema
+//     )
+// schemaComposer.getOTC('User').removeField('password')
+
+// const newSchema = schemaComposer.buildSchema()
+
+module.exports = { typeDefs, resolvers};
