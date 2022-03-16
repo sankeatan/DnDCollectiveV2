@@ -12,6 +12,19 @@ export const QUERY_USER = gql`
   }
 `;
 
+export const LOGIN = gql`
+mutation Mutation($email: String!, $password: String!) {
+  login(email: $email, password: $password) {
+    user {
+      email
+      password
+    }
+  }
+}
+`;
+
+
+
 export const QUERY_ONE_ABILITY_SCORE = gql`
   query getOneAbilityScore($abilityScoreId: ID!) {
     ability_scores(abilityScoreId: $abilityScoreId) {
