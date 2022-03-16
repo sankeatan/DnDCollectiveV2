@@ -13,7 +13,7 @@ const AbilityScore = require('../models/abilityScore');
 const Alignment = require('../models/alignment');
 const Background = require('../models/background');
 const Character = require('../models/character');
-// const CharacterBuild = require('../models/characterBuild');
+const CharacterBuild = require('../models/characterBuild');
 const Condition = require('../models/condition');
 const Class = require('../models/class');
 const DamageType = require('../models/damageType');
@@ -88,6 +88,18 @@ const meResolver = schemaComposer.createResolver({
     }
   }
 })
+
+CharacterBuildTC.addRelation('character', {
+  resolver:() => CharacterTC.mongooseResolvers.findMany(customizationOptions),
+  prepareArgs: {
+    filter: source => ({
+      _operators: {
+        index: { in: source.skills.map(skill => skill.index) },
+      },
+    }),
+  },
+  projection: { skills: true },
+});
 
 AbilityScoreTC.addRelation('skills', {
   resolver: () => SkillTC.mongooseResolvers.findMany(customizationOptions),

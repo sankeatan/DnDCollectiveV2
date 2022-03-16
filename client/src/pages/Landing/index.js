@@ -1,18 +1,18 @@
 import React, { useState }from 'react';
-import { Link, Button } from 'react-router-dom';
-import { useQuery } from '@apollo/client';
-import { QUERY_USER } from '../utils/queries';
+import { Link } from 'react-router-dom';
+// import { useQuery } from '@apollo/client';
+// import { QUERY_USER } from '../../utils/queries';
 import '../Landing/style.css';
 import Login from '../../components/Login';
-import Signup from '../../components/Signup';
+//import Signup from '../../components/Signup';
 import video from '../../assets/videos/ship.mp4'
 import Auth from '../../utils/auth';
 
 
 const Landing = () => {
 
- const [loginModalShow, setLoginModalShow] = React.useState(false);
- const [signupModalShow, setSignupModalShow] = React.useState(false);
+ const [loginModalShow, setLoginModalShow] = useState(false);
+ //const [signupModalShow, setSignupModalShow] = React.useState(false);
 
         return (
             <div>
@@ -35,16 +35,16 @@ const Landing = () => {
                     ) : (
                     <>
                     <p>Your Journey Starts Now</p>
-                    <Button onClick={() => setLoginModalShow(true)} className="button">Log In</Button>
+                    <button onClick={() => setLoginModalShow(true)} className="button">Log In</button>
                     <Login
                         show={loginModalShow}
                         onHide={() => setLoginModalShow(false)}
                     />
-                    <Link onClick={() => setSignupModalShow(true)} className="button">Sign Up</Link>
+                    {/* <Link onClick={() => setSignupModalShow(true)} className="button">Sign Up</Link>
                     <Signup
                         show={signupModalShow}
                         onHide={() => setSignupModalShow(false)}
-                    />
+                    /> */}
                     </>)}
                 </div>
             </div>
