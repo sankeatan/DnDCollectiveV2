@@ -16,13 +16,6 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@types/node": "^17.0.21",
     "concurrently": "^7.0.0"
-  },
-  "dependencies": {
-    "bcrypt": "^5.0.1",
-    "child_process": "^1.0.2",
-    "fs": "^0.0.1-security",
-    "jsonwebtoken": "^8.5.1"
   }
 }
