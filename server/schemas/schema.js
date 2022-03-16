@@ -12,13 +12,8 @@ const { signToken } = require('../utils/auth');
 const AbilityScore = require('../models/abilityScore');
 const Alignment = require('../models/alignment');
 const Background = require('../models/background');
-<<<<<<< HEAD
-// const Character = require('../models/character');
-// const CharacterBuild = require('../models/characterBuiild');
-=======
 const Character = require('../models/character');
-const CharacterBuild = require('../models/characterBuild');
->>>>>>> 19fd12d9da1e1e51f8ad668c1123ba52a083914f
+// const CharacterBuild = require('../models/characterBuild');
 const Condition = require('../models/condition');
 const Class = require('../models/class');
 const DamageType = require('../models/damageType');
@@ -45,13 +40,15 @@ const { UniqueDirectivesPerLocationRule } = require('graphql');
 // Creates User variable to acess the user model
 const User = require('../models/user');
 const { schema } = require('../models/abilityScore');
+const CharacterBuild = require('../models/characterBuild');
+const character = require('../models/character');
 
 const customizationOptions = {};
 const AbilityScoreTC = composeMongoose(AbilityScore);
 const AlignmentTC = composeMongoose(Alignment);
 const BackgroundTC = composeMongoose(Background);
-// const CharacterTC = composeMongoose(Character);
-// const CharacterBuildTC = composeMongoose(CharacterBuild);
+const CharacterTC = composeMongoose(Character);
+const CharacterBuildTC = composeMongoose(CharacterBuild);
 const ClassTC = composeMongoose(Class);
 const ConditionTC = composeMongoose(Condition);
 const DamageTypeTC = composeMongoose(DamageType);
@@ -91,7 +88,6 @@ const meResolver = schemaComposer.createResolver({
     }
   }
 })
-
 
 AbilityScoreTC.addRelation('skills', {
   resolver: () => SkillTC.mongooseResolvers.findMany(customizationOptions),
@@ -452,8 +448,8 @@ const AuthTC = schemaComposer.createObjectTC({
   fields: {
     token: 'ID!',
     user: 'User'
-    }
-  },
+  }
+},
 );
 
 schemaComposer.Mutation.addFields({
@@ -469,6 +465,61 @@ schemaComposer.Mutation.addFields({
       const token = signToken(user);
       return { token, user };
     }
+  }
+})
+
+schemaComposer.Mutation.addFields({
+  addCharacter: {
+    type: CharacterBuildTC,
+    args: {
+      character: "ID!",
+      postText: "String!",
+      postAuthor: "String!",
+      _id: "String!",
+    },
+    resolve: async (parent, { postText }, context) => {
+      if (context.user) {
+        const character = await CharacterBuild.create({
+          character,
+          postText,
+          postAuthor: context.user.username,
+        });
+
+        await User.findOneAndUpdate(
+          { _id: context.user._id },
+          { $addToSet: { characters: character._id } }
+        );
+
+        return character;
+      }
+      throw new AuthenticationError('You need to be logged in!');
+    }
+    }
+  })
+
+schemaComposer.Mutation.addFields({
+  login: {
+    type: AuthTC,
+    args: {
+      email: "String!",
+      password: "String!",
+    },
+    resolve: async (parent, { email, password }) => {
+      const user = await User.findOne({ email });
+
+      if (!user) {
+        throw new AuthenticationError('No user found with this email address');
+      }
+      const correctPw = await user.isCorrectPassword(password);
+
+      if (!correctPw) {
+        throw new AuthenticationError('Incorrect credentials');
+      }
+
+      const token = signToken(user);
+
+      return { token, user };
+    },
   }
 })
 

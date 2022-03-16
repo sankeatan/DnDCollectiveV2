@@ -4,15 +4,6 @@ export const QUERY_USER = gql`
   query user($username: String!) {
     user(username: $username) {
       _id
-<<<<<<< HEAD
-      username
-      email
-      thoughts {
-        _id
-        thoughtText
-        createdAt
-      }
-=======
       desc
       full_name
       index
@@ -439,7 +430,6 @@ export const QUERY_RULE_SECTION= gql`
       desc
       index
       name
->>>>>>> 19fd12d9da1e1e51f8ad668c1123ba52a083914f
     }
   }
 `;
@@ -448,11 +438,6 @@ export const QUERY_THOUGHTS = gql`
   query getThoughts {
     thoughts {
       _id
-<<<<<<< HEAD
-      thoughtText
-      thoughtAuthor
-      createdAt
-=======
       desc
       index
       name
@@ -467,7 +452,6 @@ export const QUERY_SKILL= gql`
       desc
       index
       name
->>>>>>> 19fd12d9da1e1e51f8ad668c1123ba52a083914f
     }
   }
 `;
@@ -476,17 +460,6 @@ export const QUERY_SINGLE_THOUGHT = gql`
   query getSingleThought($thoughtId: ID!) {
     thought(thoughtId: $thoughtId) {
       _id
-<<<<<<< HEAD
-      thoughtText
-      thoughtAuthor
-      createdAt
-      comments {
-        _id
-        commentText
-        commentAuthor
-        createdAt
-      }
-=======
       desc
       index
       name
@@ -512,7 +485,6 @@ export const QUERY_SPELL= gql`
       name
       range
       ritual
->>>>>>> 19fd12d9da1e1e51f8ad668c1123ba52a083914f
     }
   }
 `;
@@ -521,19 +493,6 @@ export const QUERY_ME = gql`
   query me {
     me {
       _id
-<<<<<<< HEAD
-      username
-      email
-      thoughts {
-        _id
-        thoughtText
-        thoughtAuthor
-        createdAt
-      }
-    }
-  }
-`;
-=======
       attack_type
       casting_time
       components
@@ -654,4 +613,3 @@ export const QUERY_ONE_SUBRACE = gql`
 //     }
 //   }
 // `;
->>>>>>> 19fd12d9da1e1e51f8ad668c1123ba52a083914f
