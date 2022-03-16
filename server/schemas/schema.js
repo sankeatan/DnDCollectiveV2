@@ -2,6 +2,7 @@
 const composeMongoose = require('graphql-compose-mongoose').composeMongoose;
 const schemaComposer = require('graphql-compose').schemaComposer;
 const { signToken } = require('../utils/auth');
+const { AuthenticationError } = require('apollo-server-express');
 // import { SchemaComposer } from 'graphql-compose';
 
 // const { User, Thought } = require('../models');
@@ -39,9 +40,8 @@ const WeaponProperty = require('../models/weaponProperty');
 const { UniqueDirectivesPerLocationRule } = require('graphql');
 // Creates User variable to acess the user model
 const User = require('../models/user');
-const { schema } = require('../models/abilityScore');
-const CharacterBuild = require('../models/characterBuild');
-const character = require('../models/character');
+// const { schema } = require('../models/abilityScore');
+
 
 const customizationOptions = {};
 const AbilityScoreTC = composeMongoose(AbilityScore);
