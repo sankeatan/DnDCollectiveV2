@@ -7,11 +7,11 @@ import {
 } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import 'bootstrap/dist/css/bootstrap.min.css';
+//import 'bootstrap/dist/css/bootstrap.min.css';
 
 import Home from './pages/Home';
 import Landing from './pages/Landing';
-import UserPage from './pages/UserPage';
+//import UserPage from './pages/UserPage';
 import CharacterBuilder from './pages/CharacterBuilder';
 
 
@@ -40,6 +40,7 @@ const client = new ApolloClient({
 });
 
 function App() {
+  const character = {};
   return (
     <ApolloProvider client={client}>
       <Router>
@@ -54,17 +55,17 @@ function App() {
                 path="/home"
                 element={<Home />}
               />
-              <Route 
-                path="/me"
+              {/* <Route 
+                pathname="/me"
                 element={<UserPage />}
               />
               <Route 
-                path="/userPage/:username"
+                pathname="/userPage/:username"
                 element={<UserPage />}
-              />
+              /> */}
               <Route 
                 path="/characterBuilder"
-                element={<CharacterBuilder />}
+                element={<CharacterBuilder character={character}/>}
               />
             </Routes>
           </div>

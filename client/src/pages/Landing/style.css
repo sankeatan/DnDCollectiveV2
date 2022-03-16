@@ -66,28 +66,12 @@ p{
     text-shadow: -1.5px 0 rgba(0, 0, 0, 0.692), 0 1.5px rgba(0, 0, 0, 0.692), 1.5px 0 rgba(0, 0, 0, 0.692), 0 -1.5px rgba(0, 0, 0, 0.692);
 }
 
-.button1{
+.button{
     color: #111;
     text-decoration: none;
     position:absolute;
     top:65%;
     left: 15.8%;
-    background: #fff;
-    padding: 10px 40px;
-    font-size: 1.2em;
-    display: inline-block;
-    font-weight: 500;
-    margin-top: 10px;
-    margin-right: 10px;
-    letter-spacing: 2px;
-}
-
-.button2{
-    color: #111;
-    text-decoration: none;
-    position:absolute;
-    top:65%;
-    left: 25.8%;
     background: #fff;
     padding: 10px 40px;
     font-size: 1.2em;
