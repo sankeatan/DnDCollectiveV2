@@ -1,8 +1,8 @@
 import { gql } from '@apollo/client';
 
-export const QUERY_ABILITY_SCORE = gql`
-  query getAbilityScore {
-    ability_score {
+export const QUERY_USER = gql`
+  query user($username: String!) {
+    user(username: $username) {
       _id
       desc
       full_name
@@ -434,9 +434,9 @@ export const QUERY_RULE_SECTION= gql`
   }
 `;
 
-export const QUERY_ONE_RULE_SECTION = gql`
-  query getOneRuleSection($ruleSectionId: ID!) {
-    rule_section(ruleSectionId: $ruleSectionId) {
+export const QUERY_THOUGHTS = gql`
+  query getThoughts {
+    thoughts {
       _id
       desc
       index
@@ -456,9 +456,9 @@ export const QUERY_SKILL= gql`
   }
 `;
 
-export const QUERY_ONE_SKILL = gql`
-  query getOneSkill($skillId: ID!) {
-    skills(skillId: $skillId) {
+export const QUERY_SINGLE_THOUGHT = gql`
+  query getSingleThought($thoughtId: ID!) {
+    thought(thoughtId: $thoughtId) {
       _id
       desc
       index
@@ -489,9 +489,9 @@ export const QUERY_SPELL= gql`
   }
 `;
 
-export const QUERY_ONE_SPELL = gql`
-  query getOneSpell($spellId: ID!) {
-    spells(spellId: $spellId) {
+export const QUERY_ME = gql`
+  query me {
+    me {
       _id
       attack_type
       casting_time

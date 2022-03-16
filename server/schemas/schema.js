@@ -1,7 +1,15 @@
+// const { merge } = require ('lodash');
 const composeMongoose = require('graphql-compose-mongoose').composeMongoose;
 const schemaComposer = require('graphql-compose').schemaComposer;
-// const { signToken } = require('../utils/auth');
+const { signToken } = require('../utils/auth');
+const { AuthenticationError } = require('apollo-server-express');
+// import { SchemaComposer } from 'graphql-compose';
 
+// const { User, Thought } = require('../models');
+// const { signToken } = require('../utils/auth');
+// import { stitchSchemas } from '@graphql-tools/stitch';
+// import typeDefs from './typeDefs';
+// import resolvers from './resolvers';
 const AbilityScore = require('../models/abilityScore');
 const Alignment = require('../models/alignment');
 const Background = require('../models/background');
@@ -29,15 +37,18 @@ const Subclass = require('../models/subclass');
 const Subrace = require('../models/subrace');
 const Trait = require('../models/trait');
 const WeaponProperty = require('../models/weaponProperty');
+const { UniqueDirectivesPerLocationRule } = require('graphql');
 // Creates User variable to acess the user model
 const User = require('../models/user');
+// const { schema } = require('../models/abilityScore');
+
 
 const customizationOptions = {};
 const AbilityScoreTC = composeMongoose(AbilityScore);
 const AlignmentTC = composeMongoose(Alignment);
 const BackgroundTC = composeMongoose(Background);
-// const CharacterTC = composeMongoose(Character);
-// const CharacterBuildTC = composeMongoose(CharacterBuild);
+const CharacterTC = composeMongoose(Character);
+const CharacterBuildTC = composeMongoose(CharacterBuild);
 const ClassTC = composeMongoose(Class);
 const ConditionTC = composeMongoose(Condition);
 const DamageTypeTC = composeMongoose(DamageType);
@@ -61,13 +72,34 @@ const SubraceTC = composeMongoose(Subrace);
 const TraitTC = composeMongoose(Trait);
 const WeaponPropertyTC = composeMongoose(WeaponProperty);
 // Creates the user Type compose to easily create the type def
-const UserTC = composeMongoose(User)
+const UserTC = composeMongoose(User);
 
 
 // TODO: Figure out how to use commented out relations without breaking GraphQL Playground.
 // Commented out relations lead to circular dependencies. This causes graphql introspection to enter an infinite recursive loop,
 // breaking GraphQL Playground.
 
+const meResolver = schemaComposer.createResolver({
+  name: 'me',
+  type: UserTC,
+  resolve: async (parent, args, context) => {
+    if (context.user) {
+      return User.findOne({ _id: context.user._id }).populate('characters');
+    }
+  }
+})
+
+CharacterBuildTC.addRelation('character', {
+  resolver:() => CharacterTC.mongooseResolvers.findMany(customizationOptions),
+  prepareArgs: {
+    filter: source => ({
+      _operators: {
+        index: { in: source.skills.map(skill => skill.index) },
+      },
+    }),
+  },
+  projection: { skills: true },
+});
 
 AbilityScoreTC.addRelation('skills', {
   resolver: () => SkillTC.mongooseResolvers.findMany(customizationOptions),
@@ -390,11 +422,126 @@ TraitTC.addRelation('proficiencies', {
 //   projection: { parent: true }
 // });
 
+
+// const schemaComp = new SchemaComposer();
+// schemaComposer.addTypeDefs(`
+// type User {
+//   _id: ID
+//   username: String
+//   email: String
+//   password: String
+//   thoughts: [Thought]!
+// }
+
+// type Auth {
+//   token: ID!
+//   user: User
+// }
+
+// type Query {
+//   users: [User]
+//   user(username: String!): User
+//   thoughts(username: String): [Thought]
+//   thought(thoughtId: ID!): Thought
+//   me: User
+// }
+
+// type Mutation {
+//   addUser(username: String!, email: String!, password: String!): Auth
+//   login(email: String!, password: String!): Auth
+//   addThought(thoughtText: String!): Thought
+//   addComment(thoughtId: ID!, commentText: String!): Thought
+//   removeThought(thoughtId: ID!): Thought
+//   removeComment(thoughtId: ID!, commentId: ID!): Thought
+// }`);
+
+const AuthTC = schemaComposer.createObjectTC({
+  name: 'Auth',
+  fields: {
+    token: 'ID!',
+    user: 'User'
+  }
+},
+);
+
+schemaComposer.Mutation.addFields({
+  addUser: {
+    type: AuthTC,
+    args: {
+      username: "String!",
+      email: "String!",
+      password: "String!",
+    },
+    resolve: async (parent, { username, email, password }) => {
+      const user = await User.create({ username, email, password });
+      const token = signToken(user);
+      return { token, user };
+    }
+  }
+})
+
+schemaComposer.Mutation.addFields({
+  addCharacter: {
+    type: CharacterBuildTC,
+    args: {
+      character: "ID!",
+      postText: "String!",
+      postAuthor: "String!",
+      _id: "String!",
+    },
+    resolve: async (parent, { postText }, context) => {
+      if (context.user) {
+        const character = await CharacterBuild.create({
+          character,
+          postText,
+          postAuthor: context.user.username,
+        });
+
+        await User.findOneAndUpdate(
+          { _id: context.user._id },
+          { $addToSet: { characters: character._id } }
+        );
+
+        return character;
+      }
+      throw new AuthenticationError('You need to be logged in!');
+    }
+    }
+  })
+
+schemaComposer.Mutation.addFields({
+  login: {
+    type: AuthTC,
+    args: {
+      email: "String!",
+      password: "String!",
+    },
+    resolve: async (parent, { email, password }) => {
+      const user = await User.findOne({ email });
+
+      if (!user) {
+        throw new AuthenticationError('No user found with this email address');
+      }
+      const correctPw = await user.isCorrectPassword(password);
+
+      if (!correctPw) {
+        throw new AuthenticationError('Incorrect credentials');
+      }
+
+      const token = signToken(user);
+
+      return { token, user };
+    },
+  }
+})
+
+
 schemaComposer.Query.addFields({
   // Creates the user and users querys and resolvers and gets the results from customonizationOptions
   abilityScore: AbilityScoreTC.mongooseResolvers.findOne(customizationOptions),
   abilityScores: AbilityScoreTC.mongooseResolvers.findMany(customizationOptions),
   user: UserTC.mongooseResolvers.findOne(customizationOptions),
+  me: meResolver,
   users: UserTC.mongooseResolvers.findMany(customizationOptions),
   alignment: AlignmentTC.mongooseResolvers.findOne(customizationOptions),
   alignments: AlignmentTC.mongooseResolvers.findMany(customizationOptions),
@@ -445,7 +592,10 @@ schemaComposer.Query.addFields({
   weaponProperty: WeaponPropertyTC.mongooseResolvers.findOne(customizationOptions),
   weaponProperties: WeaponPropertyTC.mongooseResolvers.findMany(customizationOptions),
 });
-
 const graphqlSchema = schemaComposer.buildSchema();
 // Exports schema
+
+
+
 module.exports = graphqlSchema;
+// module.exports = typeDefs;

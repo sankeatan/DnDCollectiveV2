@@ -2,87 +2,87 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const Spellcasting = {
-    cantrips_known: [ { type: String, index: true } ],
-    spell_slots_level_1: { type: Number, index: true },
-    spell_slots_level_2: { type: Number, index: true },
-    spell_slots_level_3: { type: Number, index: true },
-    spell_slots_level_4: { type: Number, index: true },
-    spell_slots_level_5: { type: Number, index: true },
-    spell_slots_level_6: { type: Number, index: true },
-    spell_slots_level_7: { type: Number, index: true },
-    spell_slots_level_8: { type: Number, index: true },
-    spell_slots_level_9: { type: Number, index: true },
-    spells_known: [ { type: String, index: true } ],
+    cantrips_known: [ { type: String } ],
+    spell_slots_level_1: { type: Number },
+    spell_slots_level_2: { type: Number },
+    spell_slots_level_3: { type: Number },
+    spell_slots_level_4: { type: Number },
+    spell_slots_level_5: { type: Number },
+    spell_slots_level_6: { type: Number },
+    spell_slots_level_7: { type: Number },
+    spell_slots_level_8: { type: Number },
+    spell_slots_level_9: { type: Number },
+    spells_known: [ { type: String } ],
 };
 
 const Feature = {
-    index: { type: String, index: true },
-    name: { type: String, index: true },
-    desc: { type: String, index: true },
+    index: { type: String },
+    name: { type: String },
+    desc: { type: String },
 };
 
 const ArmorClass = {
-    base: { type: Number, index: true },
-    dex_bonus: { type: Boolean, index: true },
-    max_bonus: { type: Number, index: true },
+    base: { type: Number },
+    dex_bonus: { type: Boolean },
+    max_bonus: { type: Number },
 };
 
 const AbilityScores = {
-    str: { type: Number, index: true },
-    dex: { type: Number, index: true },
-    con: { type: Number, index: true },
-    wis: { type: Number, index: true },
-    int: { type: Number, index: true },
-    cha: { type: Number, index: true },
+    str: { type: Number },
+    dex: { type: Number },
+    con: { type: Number },
+    wis: { type: Number },
+    int: { type: Number },
+    cha: { type: Number },
 }
 
 const Equipment= {
-    index: { type: String, index: true },
-    name: { type: String, index: true },
-    desc: { type: String, index: true },
+    index: { type: String },
+    name: { type: String },
+    desc: { type: String },
 };
 
 
 const Background = {
-    index: { type: String, index: true },
-    name: { type: String, index: true },
-    desc: { type: String, index: true },
+    index: { type: String },
+    name: { type: String },
+    desc: { type: String },
 };
 
 const Feat = {
-    index: { type: String, index: true },
-    name: { type: String, index: true },
-    desc: { type: String, index: true },
+    index: { type: String },
+    name: { type: String },
+    desc: { type: String },
 };
 
 const Character = new Schema({
-    _id: { type: String, select: false },
-    desc: { type: [String], index: true },
-    full_name: { type: String, index: true },
-    skills: [ { type: String, index: true } ],
-    url: { type: String, index: true },
-    age: { type: String, index: true },
-    alignment: { type: String, index: true },
-    size: { type: String, index: true },
-    speed: { type: Number, index: true },
-    proficiency: [ { type: String, index: true } ],
-    subrace: { type: String, index: true },
-    race: { type: String, index: true },
-    languages: [ { type: String, index: true } ],
+    _id: { type: String },
+    desc: { type: [String] },
+    full_name: { type: String },
+    skills: [ { type: String } ],
+    url: { type: String },
+    age: { type: String },
+    alignment: { type: String },
+    size: { type: String },
+    speed: { type: Number },
+    proficiency: [ { type: String } ],
+    subrace: { type: String },
+    race: { type: String },
+    languages: [ { type: String } ],
     ability_score: AbilityScores,
     background: Background,
-    multi_class: { type: String, index: true },
+    multi_class: { type: String },
     equipment: [Equipment],
     armor_class: ArmorClass,
     feats: [Feat],
     features: [Feature],
     spellcasting: Spellcasting,
-    skills: [ { type: String, index: true } ],
-    subclass: { type: String, index: true },
+    skills: [ { type: String } ],
+    subclass: { type: String },
     user:
         {
-          type: Schema.Types.ObjectId,
-          ref: 'User',
+        type: Schema.Types.ObjectId,
+        ref: 'User',
         },
 });
 

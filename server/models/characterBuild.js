@@ -1,5 +1,5 @@
-// const { Schema, model } = require('mongoose');
-// const dateFormat = require('../utils/dateFormat');
+const { Schema, model } = require('mongoose');
+const dateFormat = require('../utils/dateFormat');
 
 const characterBuildSchema = new Schema({
   character:
@@ -45,6 +45,6 @@ const characterBuildSchema = new Schema({
   ],
 });
 
-// const CharacterBuild = model('CharacterBuild', characterBuildSchema);
+const CharacterBuild = model('CharacterBuild', characterBuildSchema);
 
-// module.exports = CharacterBuild;
+module.exports = CharacterBuild;
