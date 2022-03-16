@@ -1,6 +1,6 @@
 import React, {createContext, useState} from 'react';
 import { useQuery } from '@apollo/client';
-import { QUERY_CHARACTER } from '../utils/queries';
+//import { QUERY_CHARACTER } from '../../utils/queries';
 import Header from '../../components/Header';
 import CharBuildFooter from '../../components/CharBuildFooter'
 import NavBar from '../../components/NavBar'
@@ -15,11 +15,11 @@ import '../CharacterBuilder/style.css';
 
 const CharacterContext = createContext();
 
-
+const QUERY_CHARACTER = '';
 
 const CharacterBuilder = () => {
 
-        const { characterData } = useQuery(QUERY_CHARACTER);
+        const characterData = useQuery(QUERY_CHARACTER);
         
         const [character, setCharacter] = useState({characterData});
         if (!characterData)
