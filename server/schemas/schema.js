@@ -1,5 +1,6 @@
 const composeMongoose = require('graphql-compose-mongoose').composeMongoose;
 const schemaComposer = require('graphql-compose').schemaComposer;
+// const { signToken } = require('../utils/auth');
 
 const AbilityScore = require('../models/abilityScore');
 const Alignment = require('../models/alignment');
@@ -27,15 +28,16 @@ const Spell = require('../models/spell');
 const Subclass = require('../models/subclass');
 const Subrace = require('../models/subrace');
 const Trait = require('../models/trait');
-const User = require('../models/user');
 const WeaponProperty = require('../models/weaponProperty');
+// Creates User variable to acess the user model
+const User = require('../models/user');
 
 const customizationOptions = {};
 const AbilityScoreTC = composeMongoose(AbilityScore);
 const AlignmentTC = composeMongoose(Alignment);
 const BackgroundTC = composeMongoose(Background);
-const CharacterTC = composeMongoose(Character);
-const CharacterBuildTC = composeMongoose(CharacterBuild);
+// const CharacterTC = composeMongoose(Character);
+// const CharacterBuildTC = composeMongoose(CharacterBuild);
 const ClassTC = composeMongoose(Class);
 const ConditionTC = composeMongoose(Condition);
 const DamageTypeTC = composeMongoose(DamageType);
@@ -57,8 +59,10 @@ const SpellTC = composeMongoose(Spell);
 const SubclassTC = composeMongoose(Subclass);
 const SubraceTC = composeMongoose(Subrace);
 const TraitTC = composeMongoose(Trait);
-const UserTC = composeMongoose(User);
 const WeaponPropertyTC = composeMongoose(WeaponProperty);
+// Creates the user Type compose to easily create the type def
+const UserTC = composeMongoose(User)
+
 
 // TODO: Figure out how to use commented out relations without breaking GraphQL Playground.
 // Commented out relations lead to circular dependencies. This causes graphql introspection to enter an infinite recursive loop,
@@ -387,8 +391,11 @@ TraitTC.addRelation('proficiencies', {
 // });
 
 schemaComposer.Query.addFields({
+  // Creates the user and users querys and resolvers and gets the results from customonizationOptions
   abilityScore: AbilityScoreTC.mongooseResolvers.findOne(customizationOptions),
   abilityScores: AbilityScoreTC.mongooseResolvers.findMany(customizationOptions),
+  user: UserTC.mongooseResolvers.findOne(customizationOptions),
+  users: UserTC.mongooseResolvers.findMany(customizationOptions),
   alignment: AlignmentTC.mongooseResolvers.findOne(customizationOptions),
   alignments: AlignmentTC.mongooseResolvers.findMany(customizationOptions),
   background: BackgroundTC.mongooseResolvers.findOne(customizationOptions),
@@ -440,4 +447,5 @@ schemaComposer.Query.addFields({
 });
 
 const graphqlSchema = schemaComposer.buildSchema();
+// Exports schema
 module.exports = graphqlSchema;
