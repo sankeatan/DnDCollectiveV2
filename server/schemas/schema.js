@@ -12,8 +12,13 @@ const { signToken } = require('../utils/auth');
 const AbilityScore = require('../models/abilityScore');
 const Alignment = require('../models/alignment');
 const Background = require('../models/background');
+<<<<<<< HEAD
 // const Character = require('../models/character');
 // const CharacterBuild = require('../models/characterBuiild');
+=======
+const Character = require('../models/character');
+const CharacterBuild = require('../models/characterBuild');
+>>>>>>> 19fd12d9da1e1e51f8ad668c1123ba52a083914f
 const Condition = require('../models/condition');
 const Class = require('../models/class');
 const DamageType = require('../models/damageType');
