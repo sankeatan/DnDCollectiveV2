@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import React, { UseState } from 'react';
 
 const CharBuildSheet = (props) => {
 
-    const [gender, setGender] = useState("Female");
-    const [charName, setCharName] = useState("Character Name");
-    const [image, setImage] = useState("/images/DragonbornFemaleIcon.png")
+    const [gender, setGender] = UseState("Female");
+    const [charName, setCharName] = UseState("Character Name");
+    const [image, setImage] = UseState("/images/DragonbornFemaleIcon.png")
     const style = {
         width:"18 rem"
     }
