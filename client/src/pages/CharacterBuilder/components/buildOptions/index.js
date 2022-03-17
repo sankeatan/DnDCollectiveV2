@@ -12,10 +12,10 @@ import Race from './pages/race';
 
 function characterBuilderContainer() {
   
-  const [CurrentPage, SetCurrentPage] = UseState('Race');
+  const [currentPage, setCurrentPage] = UseState('Race');
 
   const renderPage = () => {
-    if (CurrentPage === 'Race') {
+    if (currentPage === 'Race') {
       return <Race />;
     }
     if (currentPage === 'Class') {
