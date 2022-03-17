@@ -10,16 +10,16 @@ const Footer = () => {
             <h3 className="est-footer">Est. 2022</h3>
         </div>
         <div className="github">
-            <Link href="https://github.com/dmcarver01611">
+            <Link to="https://github.com/dmcarver01611">
             <i className="fa fa-github fa-2x" aria-hidden="true"></i>
             </ Link>
-            <Link href="https://github.com/sankeatan">
+            <Link to="https://github.com/sankeatan">
             <i className="fa fa-github fa-2x" aria-hidden="true"></i>
             </ Link>
-            <Link href="https://github.com/Wngartman">
+            <Link to="https://github.com/Wngartman">
             <i className="fa fa-github fa-2x" aria-hidden="true"></i>
             </ Link>
-            <Link href="https://github.com/Hank5050">
+            <Link to="https://github.com/Hank5050">
             <i className="fa fa-github fa-2x" aria-hidden="true"></i>
             </ Link>
         </div>

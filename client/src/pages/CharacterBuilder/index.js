@@ -2,7 +2,7 @@ import React, {createContext, useState} from 'react';
 import { useQuery } from '@apollo/client';
 //import { QUERY_CHARACTER } from '../../utils/queries';
 import Header from '../../components/Header';
-import CharBuildFooter from '../../components/CharBuildFooter'
+import CharBuildFooter from './components/CharBuildFooter'
 import NavBar from '../../components/NavBar'
 import CharBuildOptionBtns from '../../components/CharBuildOptionBtns'
 import CharBuildSheet from '../../components/CharBuildSheet';
