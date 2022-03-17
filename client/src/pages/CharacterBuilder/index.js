@@ -2,12 +2,11 @@ import React, {createContext, useState} from 'react';
 import { useQuery } from '@apollo/client';
 //import { QUERY_CHARACTER } from '../../utils/queries';
 import Header from '../../components/Header';
-import CharBuildFooter from './components/CharBuildFooter'
+import Footer from './components/footer'
 import NavBar from '../../components/NavBar'
-import CharBuildOptionBtns from '../../components/CharBuildOptionBtns'
-import CharBuildSheet from '../../components/CharBuildSheet';
-import CharBuildWikiInfo from '../../components/CharBuildWikiInfo';
-import CharBuildOptionInfo from '../../components/CharBuildWikiInfo';
+import CharBuildOptions from './components/buildOptions'
+import CharBuildSheet from './components/CharBuildSheet';
+import CharBuildWikiInfo from './components/CharBuildWikiInfo';
 
 import '../CharacterBuilder/style.css';
 //import { createContext } from 'vm';
@@ -37,15 +36,14 @@ const CharacterBuilder = () => {
 <main>
         <Header />
         <NavBar />
-        <CharBuildOptionBtns />
 
         <div class="gridwrap">
                 <CharBuildSheet />
-                <CharBuildOptionInfo />
+                <CharBuildOptions />
                 <CharBuildWikiInfo />
         </div>
         <div class="footer-wrap">
-                <CharBuildFooter />
+                <Footer />
         </div>
 </main>
 </CharacterContext.Provider>

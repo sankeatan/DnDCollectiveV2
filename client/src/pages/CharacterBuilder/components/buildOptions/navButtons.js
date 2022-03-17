@@ -1,17 +1,17 @@
-import React, { useState, useContext } from "react";
+import React, { UseState } from "react";
 
 const CharBuildOptionInfo = (props) => {
 
-    const [race, setRace] = useState(props.race);
-    const [Class, setClass] = useState("fighter");
-    const [background, setBackground] = useState("acolyte");
-    const [str, setStr] = useState(0);
-    const [dex, setDex] = useState(0);
-    const [con, setCon] = useState(0);
-    const [int, setInt] = useState(0);
-    const [wis, setWis] = useState(0);
-    const [cha, setCha] = useState(0);
-    const [navChoice, setNavChoice] = useState("Race");
+    const [race, setRace] = UseState('');
+    const [Class, setClass] = UseState("fighter");
+    const [background, setBackground] = UseState("acolyte");
+    const [str, setStr] = UseState(0);
+    const [dex, setDex] = UseState(0);
+    const [con, setCon] = UseState(0);
+    const [int, setInt] = UseState(0);
+    const [wis, setWis] = UseState(0);
+    const [cha, setCha] = UseState(0);
+    const [navChoice, setNavChoice] = UseState("Race");
     
 
     return (

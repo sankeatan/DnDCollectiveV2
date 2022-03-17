@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { UseState } from 'react';
 import NavButtons from './navButtons';
 import AbilityScores from './pages/abilityScores';
 import Background from './pages/background';
@@ -9,13 +9,13 @@ import Languages from './pages/languages';
 import Proficiencies from './pages/proficiencies';
 import Race from './pages/race';
 
-const [currentPage, setCurrentPage] = useState('Race');
 
 function characterBuilderContainer() {
   
+  const [CurrentPage, SetCurrentPage] = UseState('Race');
 
   const renderPage = () => {
-    if (currentPage === 'Race') {
+    if (CurrentPage === 'Race') {
       return <Race />;
     }
     if (currentPage === 'Class') {
@@ -41,7 +41,7 @@ function characterBuilderContainer() {
     }
   };
 
-  const handlePageChange = (page) => setCurrentPage(page);
+  const handlePageChange = (page) => SetCurrentPage(page);
 
   return (
     <div>
