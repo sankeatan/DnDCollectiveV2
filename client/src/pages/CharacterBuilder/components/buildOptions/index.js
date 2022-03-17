@@ -41,7 +41,7 @@ function characterBuilderContainer() {
     }
   };
 
-  const handlePageChange = (page) => SetCurrentPage(page);
+  const handlePageChange = (page) => setCurrentPage(page);
 
   return (
     <div>
