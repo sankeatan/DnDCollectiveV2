@@ -13,6 +13,7 @@ import Home from './pages/Home';
 import Landing from './pages/Landing';
 //import UserPage from './pages/UserPage';
 import CharacterBuilder from './pages/CharacterBuilder';
+import { UserContext, UserContextProvider } from './UserContext';
 
 
 // Construct our main GraphQL API endpoint
@@ -43,6 +44,7 @@ function App() {
   const character = {};
   return (
     <ApolloProvider client={client}>
+      <UserContextProvider>
       <Router>
         <div className="flex-column justify-flex-start min-100-vh">
           <div className="container">
@@ -71,6 +73,7 @@ function App() {
           </div>
         </div>
       </Router>
+      </UserContextProvider>
     </ApolloProvider>
   );
 }
