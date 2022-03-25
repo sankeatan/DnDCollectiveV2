@@ -41,7 +41,7 @@ const client = new ApolloClient({
 });
 
 function App() {
-  const character = {};
+  
   return (
     <ApolloProvider client={client}>
       <UserContextProvider>

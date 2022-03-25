@@ -9,45 +9,45 @@ import Languages from './pages/languages';
 import Proficiencies from './pages/proficiencies';
 import Race from './pages/race';
 
-
 function characterBuilderContainer() {
-  
-  const [currentPage, setCurrentPage] = useState('Race');
 
-  const renderPage = () => {
-    if (currentPage === 'Race') {
+const [ navSelection, setNavSelection ] = useState('Race');
+
+  const navUpdate = (page) => {
+    setNavSelection(page)
+  }
+
+  const renderOption = () => {
+    if (navSelection === 'Race') {
       return <Race />;
     }
-    if (currentPage === 'Class') {
+    if (navSelection === 'Class') {
       return <Class />;
     }
-    if (currentPage === 'Abilitiy Scores') {
+    if (navSelection === 'Abilitiy Scores') {
       return <AbilityScores />;
     }
-    if (currentPage === 'Background') {
+    if (navSelection === 'Background') {
       return <Background />;
     }
-    if (currentPage === 'Languages') {
+    if (navSelection === 'Languages') {
       return <Languages />;
     }
-    if (currentPage === 'Proficiencies') {
+    if (navSelection === 'Proficiencies') {
       return <Proficiencies />;
     }
-    if (currentPage === 'Feats') {
+    if (navSelection === 'Feats') {
         return <Feats />;
     }
-    if (currentPage === 'Inventory') {
+    if (navSelection === 'Inventory') {
         return <Inventory />;
     }
-  };
-
-  const handlePageChange = (page) => setCurrentPage(page);
 
   return (
     <div>
-      <NavButtons currentPage={currentPage} handlePageChange={handlePageChange} />
-      {renderPage()}
+      <NavButtons navSelection={navSelection} setNavSelection={navUpdate} />
+      {renderOption()}
     </div>
   )};
-
-  export default characterBuilderContainer;
+}
+export default characterBuilderContainer;

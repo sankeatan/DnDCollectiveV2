@@ -1,52 +1,34 @@
-import React, { UseState } from "react";
+import React from "react";
 
-const CharBuildOptionInfo = (props) => {
-
-    const [race, setRace] = UseState('');
-    const [Class, setClass] = UseState("fighter");
-    const [background, setBackground] = UseState("acolyte");
-    const [str, setStr] = UseState(0);
-    const [dex, setDex] = UseState(0);
-    const [con, setCon] = UseState(0);
-    const [int, setInt] = UseState(0);
-    const [wis, setWis] = UseState(0);
-    const [cha, setCha] = UseState(0);
-    const [navChoice, setNavChoice] = UseState("Race");
+export default function NavButtons({navSelection, navUpdate}){
     
-
     return (
-    <div class="build2">
-        <nav className="navbar navbar-expand-lg-build navbar-light buildnav">
-        <div className="collapse navbar-collapse-build" id="navbarNav">
-        <ul className="navbar-nav">
+    <ul className="navbar-nav">
             <li className="nav-item-build active">
-                <button onClick={()=>setNavChoice('Race')} className="nav-link" href="#">Race</button>
+                <button onClick={()=>navUpdate('Race')} className="nav-link">Race</button>
             </li>
             <li className="nav-item-build ">
-                <button onClick={()=>setNavChoice('Class')} className="nav-link" href="#">Class</button>
+                <button onClick={()=>navUpdate('Class')} className="nav-link">Class</button>
             </li>
             <li className="nav-item-build ">
-                <button onClick={()=>setNavChoice('AbilityScores')} className="nav-link disabled" href="#">Ability Scores</button>
+                <button onClick={()=>navUpdate('AbilityScores')} className="nav-link disabled">Ability Scores</button>
             </li>
             <li className="nav-item-build ">
-                <button onClick={()=>setNavChoice('Background')} className="nav-link disabled" href="#">Background</button>
+                <button onClick={()=>navUpdate('Background')} className="nav-link disabled">Background</button>
             </li>
             <li className="nav-item-build ">
-                <button onClick={()=>setNavChoice('Languages')} className="nav-link disabled" href="#">Languages</button>
+                <button onClick={()=>navUpdate('Languages')} className="nav-link disabled">Languages</button>
             </li>
             <li className="nav-item-build ">
-                <button onClick={()=>setNavChoice('Proficiencies')} className="nav-link disabled" href="#">Proficiencies</button>
+                <button onClick={()=>navUpdate('Proficiencies')} className="nav-link disabled">Proficiencies</button>
             </li>
             <li className="nav-item-build ">
-                <button onClick={()=>setNavChoice('Feats')} className="nav-link disabled" href="#">Feats</button>
+                <button onClick={()=>navUpdate('Feats')} className="nav-link disabled">Feats</button>
             </li>
             <li className="nav-item-build ">
-                <button onClick={()=>setNavChoice('Inventory')} className="nav-link disabled" href="#">Inventory</button>
+                <button onClick={()=>navUpdate('Inventory')} className="nav-link disabled">Inventory</button>
             </li>
         </ul>
-        </div>
-        </nav> 
-    </div>
-    )};
+    )
+}
 
-export default CharBuildOptionInfo;
