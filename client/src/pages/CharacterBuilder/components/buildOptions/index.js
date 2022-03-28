@@ -1,17 +1,19 @@
 import React, { useState } from 'react';
 import NavButtons from './navButtons';
-import AbilityScores from './pages/abilityScores';
-import Background from './pages/background';
-import Class from  './pages/Class';
-import Feats from './pages/feats';
-import Inventory from './pages/inventory';
-import Languages from './pages/languages';
-import Proficiencies from './pages/proficiencies';
-import Race from './pages/race';
+import AbilityScores from './renders/AbilityScores';
+import Background from './renders/Background';
+import Class from  './renders/Class';
+import Feats from './renders/Feats';
+import Inventory from './renders/inventory';
+import Languages from './renders/languages';
+import Proficiencies from './renders/proficiencies';
+import Race from './renders/race';
 
-function characterBuilderContainer() {
 
-const [ navSelection, setNavSelection ] = useState('Race');
+
+export default function CharacterBuilderContainer() {
+  
+  const [ navSelection, setNavSelection ] = useState('Race');
 
   const navUpdate = (page) => {
     setNavSelection(page)
@@ -50,4 +52,3 @@ const [ navSelection, setNavSelection ] = useState('Race');
     </div>
   )};
 }
-export default characterBuilderContainer;

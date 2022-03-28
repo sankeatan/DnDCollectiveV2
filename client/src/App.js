@@ -67,7 +67,7 @@ function App() {
               /> */}
               <Route 
                 path="/characterBuilder"
-                element={<CharacterBuilder character={character}/>}
+                element={<CharacterBuilder/>}
               />
             </Routes>
           </div>
